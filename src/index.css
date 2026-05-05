@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  --app-vh: 100dvh;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: #05060a;
+  color: #fff;
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overscroll-behavior: none;
+}
+
+body {
+  touch-action: manipulation;
+}
+
+/* Hide scrollbars globally but keep scrolling functional */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+/* TikTok-style snap feed — height cascades from parent */
+.feed-scroll {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: contain;
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+.feed-card {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  height: 100%;
+  min-height: 100%;
+}
+
+/* Paper texture for investigation screen - brighter, subtle high-end paper */
+.paper-texture {
+  background-color: #fdfcf9;
+  background-image:
+    radial-gradient(circle at 20% 10%, rgba(200, 180, 150, 0.05) 0, transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(50, 40, 30, 0.03) 0, transparent 45%),
+    repeating-linear-gradient(
+      90deg,
+      rgba(200, 190, 180, 0.02) 0 2px,
+      transparent 2px 8px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      rgba(200, 190, 180, 0.02) 0 2px,
+      transparent 2px 8px
+    );
+}
+
+/* Modern board texture - sleek dark surface */
+.corkboard-texture {
+  background-color: #181a1f;
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.05) 0%, transparent 60%),
+    repeating-linear-gradient(
+      45deg,
+      rgba(0, 0, 0, 0.2) 0px,
+      rgba(0, 0, 0, 0.2) 2px,
+      transparent 2px,
+      transparent 6px
+    );
+}
+
+/* Premium noise grain overlay */
+.grain::before {
+  content: '';
+  position: absolute;
+  inset: -100%;
+  pointer-events: none;
+  opacity: 0.04;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='noiseFilter'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23noiseFilter)'/></svg>");
+  animation: noise 8s steps(10) infinite;
+}
+
+@keyframes noise {
+  0%, 100% { transform: translate(0, 0); }
+  10% { transform: translate(-5%, -10%); }
+  20% { transform: translate(-15%, 5%); }
+  30% { transform: translate(7%, -25%); }
+  40% { transform: translate(-5%, 25%); }
+  50% { transform: translate(-15%, 10%); }
+  60% { transform: translate(15%, 0%); }
+  70% { transform: translate(0%, 15%); }
+  80% { transform: translate(3%, 35%); }
+  90% { transform: translate(-10%, 10%); }
+}
+
+/* Shimmer for placeholder thumbnails */
+.shimmer {
+  background: linear-gradient(
+    110deg,
+    rgba(255, 255, 255, 0) 20%,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(255, 255, 255, 0) 80%
+  );
+  background-size: 200% 100%;
+}
+
+/* Prevent text selection on feed for native feel */
+.no-select {
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+
+/* Press effect helper */
+.press {
+  transition: transform 120ms ease;
+}
+.press:active {
+  transform: scale(0.95);
+}
+
+/* Subtle tape strip */
+.tape {
+  background: rgba(255, 245, 200, 0.65);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  border-left: 1px dashed rgba(0, 0, 0, 0.08);
+  border-right: 1px dashed rgba(0, 0, 0, 0.08);
+}

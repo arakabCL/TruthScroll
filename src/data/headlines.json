@@ -1,0 +1,410 @@
+[
+  {
+    "id": "h1",
+    "headline": "Japanese Scientists Begin FIRST Human Trials of Drug That Regrows Missing Teeth",
+    "video": "/videos/science.mp4",
+    "thumbnail": "🦷",
+    "thumbnailGradient": "from-sky-300 via-indigo-500 to-slate-900",
+    "fakeSource": "FutureMedWire",
+    "sourceVibe": "news",
+    "engagement": { "likes": 287000, "shares": 54200, "timestamp": "5h ago" },
+    "correctVerdict": "TRUE",
+    "explanation": "A team at Kyoto University and Kitano Hospital in Japan genuinely began human trials in 2024 of a drug that blocks the USAG-1 protein, which normally suppresses tooth regrowth. The researchers are aiming for public availability by around 2030. It sounds like science fiction, but it is peer-reviewed, on the clinical-trial registry, and widely reported in credible outlets.",
+    "evidencePool": [
+      {
+        "id": "h1-e1",
+        "type": "document",
+        "title": "jRCT clinical trial registry: Anti-USAG-1 antibody trial",
+        "source": "jrct.niph.go.jp",
+        "credibility": "high",
+        "relevance": "supports"
+      },
+      {
+        "id": "h1-e2",
+        "type": "article",
+        "title": "Kitano Hospital press release: tooth regrowth trial begins",
+        "source": "kitano-hp.or.jp",
+        "credibility": "high",
+        "relevance": "supports"
+      },
+      {
+        "id": "h1-e3",
+        "type": "article",
+        "title": "Kyoto University team advances tooth-regrowth drug to humans",
+        "source": "The Japan Times",
+        "credibility": "high",
+        "relevance": "supports"
+      },
+      {
+        "id": "h1-e4",
+        "type": "document",
+        "title": "Peer-reviewed study on USAG-1 antibody in mice & ferrets",
+        "source": "Science Advances",
+        "credibility": "high",
+        "relevance": "supports"
+      },
+      {
+        "id": "h1-e5",
+        "type": "article",
+        "title": "World-first human trial of tooth regrowth drug, explained",
+        "source": "Reuters",
+        "credibility": "high",
+        "relevance": "supports"
+      },
+      {
+        "id": "h1-e6",
+        "type": "tweet",
+        "title": "This HAS to be fake right?? There's no way 😳",
+        "source": "@sleepydentist",
+        "credibility": "low",
+        "relevance": "misleading"
+      },
+      {
+        "id": "h1-e7",
+        "type": "blog",
+        "title": "10 'medical breakthroughs' that were totally fake",
+        "source": "wellnessvibes.co",
+        "credibility": "low",
+        "relevance": "irrelevant"
+      },
+      {
+        "id": "h1-e8",
+        "type": "article",
+        "title": "Timeline: scientists estimate 2030 public availability",
+        "source": "Nature news",
+        "credibility": "high",
+        "relevance": "supports"
+      },
+      {
+        "id": "h1-e9",
+        "type": "video",
+        "title": "Kitano Hospital English-language briefing",
+        "source": "NHK World-Japan",
+        "credibility": "high",
+        "relevance": "supports"
+      },
+      {
+        "id": "h1-e10",
+        "type": "photo",
+        "title": "Stock image: generic lab flasks",
+        "source": "Shutterstock",
+        "credibility": "medium",
+        "relevance": "irrelevant"
+      },
+      {
+        "id": "h1-e11",
+        "type": "tweet",
+        "title": "My dentist said this is real and he's hyped 🦷🔥",
+        "source": "@brightsmile_dr",
+        "credibility": "medium",
+        "relevance": "supports"
+      }
+    ]
+  },
+  {
+    "id": "h2",
+    "headline": "Instagram Rolling Out New Feature That Shows EXACTLY Who Views Your Profile the Most",
+    "video": "/videos/teenage.mp4",
+    "thumbnail": "📲",
+    "thumbnailGradient": "from-fuchsia-500 via-purple-600 to-indigo-900",
+    "fakeSource": "SocialLeaksDaily",
+    "sourceVibe": "news",
+    "engagement": { "likes": 1842000, "shares": 612400, "timestamp": "1h ago" },
+    "correctVerdict": "FALSE",
+    "explanation": "Instagram has repeatedly and publicly stated that it does not — and will not — show users who views their profile. This rumor is one of the most recycled social-media hoaxes of the last decade and resurfaces every few months. Third-party apps that claim to reveal 'profile stalkers' typically steal login credentials or run scams.",
+    "evidencePool": [
+      {
+        "id": "h2-e1",
+        "type": "document",
+        "title": "Instagram Help Center: 'Can I see who viewed my profile?'",
+        "source": "help.instagram.com",
+        "credibility": "high",
+        "relevance": "debunks"
+      },
+      {
+        "id": "h2-e2",
+        "type": "article",
+        "title": "Meta confirms: no profile-viewer feature, ever",
+        "source": "TechCrunch",
+        "credibility": "high",
+        "relevance": "debunks"
+      },
+      {
+        "id": "h2-e3",
+        "type": "article",
+        "title": "Snopes: the 'who viewed your Instagram' hoax, year by year",
+        "source": "snopes.com",
+        "credibility": "high",
+        "relevance": "debunks"
+      },
+      {
+        "id": "h2-e4",
+        "type": "blog",
+        "title": "LEAKED: Instagram's secret profile tracker coming soon?!",
+        "source": "tech-insider-buzz.xyz",
+        "credibility": "low",
+        "relevance": "supports"
+      },
+      {
+        "id": "h2-e5",
+        "type": "tweet",
+        "title": "Just saw who views my insta the most 👀 BROO",
+        "source": "@finalbosszane",
+        "credibility": "low",
+        "relevance": "supports"
+      },
+      {
+        "id": "h2-e6",
+        "type": "video",
+        "title": "YouTube tutorial: '100% WORKING' profile viewer app",
+        "source": "YouTube @hackgurus",
+        "credibility": "low",
+        "relevance": "misleading"
+      },
+      {
+        "id": "h2-e7",
+        "type": "article",
+        "title": "FTC warning: 'profile viewer' apps are data-stealing scams",
+        "source": "ftc.gov",
+        "credibility": "high",
+        "relevance": "debunks"
+      },
+      {
+        "id": "h2-e8",
+        "type": "document",
+        "title": "Meta developer docs: no profile-view API exists",
+        "source": "developers.facebook.com",
+        "credibility": "high",
+        "relevance": "debunks"
+      },
+      {
+        "id": "h2-e9",
+        "type": "tweet",
+        "title": "Adam Mosseri: we're not building this and never were",
+        "source": "@mosseri",
+        "credibility": "high",
+        "relevance": "debunks"
+      },
+      {
+        "id": "h2-e10",
+        "type": "article",
+        "title": "Why people keep believing the Instagram stalker myth",
+        "source": "The Verge",
+        "credibility": "high",
+        "relevance": "debunks"
+      },
+      {
+        "id": "h2-e11",
+        "type": "photo",
+        "title": "Screenshot of 'Your Top Viewer' notification (Photoshopped)",
+        "source": "Reddit r/Instagram",
+        "credibility": "low",
+        "relevance": "misleading"
+      }
+    ]
+  },
+  {
+    "id": "h3",
+    "headline": "MrBeast Pays for 1,000 People's Eye Surgeries So They Can SEE for the First Time",
+    "video": "/videos/grandma.mp4",
+    "thumbnail": "👁️",
+    "thumbnailGradient": "from-amber-200 via-rose-300 to-rose-700",
+    "fakeSource": "ViralGoodHQ",
+    "sourceVibe": "wellness",
+    "engagement": { "likes": 3842000, "shares": 1204000, "timestamp": "3h ago" },
+    "correctVerdict": "TRUE",
+    "explanation": "In January 2023 Jimmy Donaldson (MrBeast) released a video titled '1,000 Blind People See For The First Time' in which he funded cataract surgeries for exactly 1,000 people through a partnership with SEE International. The video was covered by mainstream news outlets and sparked public debate about whether philanthropy should be framed as entertainment — but the surgeries themselves are documented and real.",
+    "evidencePool": [
+      {
+        "id": "h3-e1",
+        "type": "video",
+        "title": "Original MrBeast video: '1,000 Blind People See For The First Time'",
+        "source": "YouTube @MrBeast",
+        "credibility": "high",
+        "relevance": "supports"
+      },
+      {
+        "id": "h3-e2",
+        "type": "article",
+        "title": "MrBeast funds 1,000 cataract surgeries, reigniting charity debate",
+        "source": "The New York Times",
+        "credibility": "high",
+        "relevance": "supports"
+      },
+      {
+        "id": "h3-e3",
+        "type": "document",
+        "title": "SEE International partnership statement",
+        "source": "seeintl.org",
+        "credibility": "high",
+        "relevance": "supports"
+      },
+      {
+        "id": "h3-e4",
+        "type": "article",
+        "title": "BBC: MrBeast cataract video tops 150M views",
+        "source": "BBC News",
+        "credibility": "high",
+        "relevance": "supports"
+      },
+      {
+        "id": "h3-e5",
+        "type": "article",
+        "title": "Ethicists split on YouTuber-funded charity content",
+        "source": "The Atlantic",
+        "credibility": "high",
+        "relevance": "misleading"
+      },
+      {
+        "id": "h3-e6",
+        "type": "tweet",
+        "title": "This has to be staged right?? Nobody does this",
+        "source": "@cynicwatching",
+        "credibility": "low",
+        "relevance": "misleading"
+      },
+      {
+        "id": "h3-e7",
+        "type": "blog",
+        "title": "Why MrBeast's charity videos are actually bad, actually",
+        "source": "opinion.substack",
+        "credibility": "medium",
+        "relevance": "misleading"
+      },
+      {
+        "id": "h3-e8",
+        "type": "article",
+        "title": "Fact check: yes, MrBeast really paid for all 1,000 surgeries",
+        "source": "USA Today",
+        "credibility": "high",
+        "relevance": "supports"
+      },
+      {
+        "id": "h3-e9",
+        "type": "document",
+        "title": "Beast Philanthropy 990 tax filing (public record)",
+        "source": "irs.gov",
+        "credibility": "high",
+        "relevance": "supports"
+      },
+      {
+        "id": "h3-e10",
+        "type": "photo",
+        "title": "Stock image: doctor removing eye bandages",
+        "source": "Getty Images",
+        "credibility": "medium",
+        "relevance": "irrelevant"
+      },
+      {
+        "id": "h3-e11",
+        "type": "tweet",
+        "title": "'1000 blind people' is an exaggeration, it was like 80",
+        "source": "@factz_checker",
+        "credibility": "low",
+        "relevance": "misleading"
+      }
+    ]
+  },
+  {
+    "id": "h4",
+    "headline": "Netflix Password Sharing Now Officially ILLEGAL in US — Users Can Be Fined Up to $500",
+    "video": "/videos/tv.mp4",
+    "thumbnail": "📺",
+    "thumbnailGradient": "from-red-900 via-rose-700 to-neutral-900",
+    "fakeSource": "StreamingAlerts",
+    "sourceVibe": "news",
+    "engagement": { "likes": 512000, "shares": 298500, "timestamp": "9h ago" },
+    "correctVerdict": "FALSE",
+    "explanation": "Netflix did crack down on password sharing starting in 2023, charging an extra fee for accounts used across households. But that is a company policy, not a law. There is no US statute banning password sharing and no government-issued $500 fine. This claim blurs the line between what a private company can do and what the law requires — exactly the kind of wording misinformation exploits.",
+    "evidencePool": [
+      {
+        "id": "h4-e1",
+        "type": "document",
+        "title": "Netflix Help Center: 'Sharing your Netflix account'",
+        "source": "help.netflix.com",
+        "credibility": "high",
+        "relevance": "debunks"
+      },
+      {
+        "id": "h4-e2",
+        "type": "article",
+        "title": "Netflix's password-sharing crackdown, explained",
+        "source": "The Verge",
+        "credibility": "high",
+        "relevance": "misleading"
+      },
+      {
+        "id": "h4-e3",
+        "type": "article",
+        "title": "No, sharing your Netflix password is not a crime",
+        "source": "Associated Press Fact Check",
+        "credibility": "high",
+        "relevance": "debunks"
+      },
+      {
+        "id": "h4-e4",
+        "type": "document",
+        "title": "US Copyright Office: no law on streaming credential sharing",
+        "source": "copyright.gov",
+        "credibility": "high",
+        "relevance": "debunks"
+      },
+      {
+        "id": "h4-e5",
+        "type": "tweet",
+        "title": "My cousin got a $500 fine from Netflix, be careful guys 😱",
+        "source": "@streaming_tips_247",
+        "credibility": "low",
+        "relevance": "supports"
+      },
+      {
+        "id": "h4-e6",
+        "type": "blog",
+        "title": "NEW LAW: Netflix fines explained (2024 update)",
+        "source": "techalerts-today.net",
+        "credibility": "low",
+        "relevance": "supports"
+      },
+      {
+        "id": "h4-e7",
+        "type": "article",
+        "title": "Reuters fact check: no federal or state law fines password sharing",
+        "source": "Reuters Fact Check",
+        "credibility": "high",
+        "relevance": "debunks"
+      },
+      {
+        "id": "h4-e8",
+        "type": "article",
+        "title": "Why 'company policy' keeps getting reported as 'law'",
+        "source": "Columbia Journalism Review",
+        "credibility": "high",
+        "relevance": "debunks"
+      },
+      {
+        "id": "h4-e9",
+        "type": "tweet",
+        "title": "Netflix told my mom she'd be reported to the FBI 💀",
+        "source": "@haha_no",
+        "credibility": "low",
+        "relevance": "misleading"
+      },
+      {
+        "id": "h4-e10",
+        "type": "document",
+        "title": "Netflix Q4 2023 earnings: extra-member fee is company policy",
+        "source": "ir.netflix.net",
+        "credibility": "high",
+        "relevance": "debunks"
+      },
+      {
+        "id": "h4-e11",
+        "type": "photo",
+        "title": "Fake 'official' notice screenshot (edited in Canva)",
+        "source": "Facebook share",
+        "credibility": "low",
+        "relevance": "supports"
+      }
+    ]
+  }
+]

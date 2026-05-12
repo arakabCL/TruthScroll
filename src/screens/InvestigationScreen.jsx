@@ -155,9 +155,11 @@ export default function InvestigationScreen({ headline, onSubmit, onAbandon }) {
   const timeStressed = timeLeftMs < 30_000
 
   return (
-    <div className="corkboard-texture grain relative h-[100dvh] w-full overflow-hidden text-desk-paper flex flex-col">
+    <div className="bg-[#21252d] relative h-[100dvh] w-full overflow-hidden text-desk-paper flex flex-col shadow-[inset_0_0_120px_rgba(0,0,0,0.5)]">
+      {/* Subtle wall texture */}
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none mix-blend-plus-lighter" style={{ backgroundImage: `repeating-linear-gradient(45deg, #fff 0, #fff 1px, transparent 1px, transparent 10px)` }} />
       {/* Top bar: Back • Timer */}
-      <div className="relative z-20 flex items-center justify-between gap-3 bg-black/40 px-4 py-2.5 pt-[max(env(safe-area-inset-top),10px)] backdrop-blur-md shadow-md border-b border-white/10">
+      <div className="relative z-20 flex items-center justify-between gap-3 bg-black/30 px-4 py-2.5 pt-[max(env(safe-area-inset-top),10px)] backdrop-blur-md shadow-md border-b border-black/20">
         <button
           onClick={onAbandon}
           className="press rounded-full border border-white/20 bg-black/50 px-3 py-1.5 text-[11px] font-bold uppercase tracking-widest text-white/80 hover:bg-white/10"
@@ -183,20 +185,32 @@ export default function InvestigationScreen({ headline, onSubmit, onAbandon }) {
         onDragEnd={handleDragEnd}
       >
         {/* Main Corkboard Area */}
-        <Droppable id="board" className="relative flex-1 w-full overflow-hidden">
+        <div className="relative flex-1 w-full p-4 sm:p-6 lg:p-8 overflow-hidden flex flex-col items-center justify-center" onWheel={handleWheel}>
           {/* Zoom Controls */}
-          <div className="absolute top-4 right-4 z-40 flex flex-col items-center bg-[#fdfcf9]/90 backdrop-blur border border-[#e6ded3] shadow-sm rounded-lg overflow-hidden text-[#1c1b18]/60">
+          <div className="absolute top-4 right-4 sm:top-8 sm:right-8 z-40 flex flex-col items-center bg-[#fdfcf9]/90 backdrop-blur border border-[#e6ded3] shadow-sm rounded-lg overflow-hidden text-[#1c1b18]/60">
             <button onClick={() => setBoardScale(s => Math.min(s + 0.15, 2.5))} className="p-2 sm:px-3 hover:bg-black/5 hover:text-black font-bold text-lg press">+</button>
             <div className="w-full h-[1px] bg-[#e6ded3]" />
             <button onClick={() => setBoardScale(s => Math.max(s - 0.15, 0.4))} className="p-2 sm:px-3 hover:bg-black/5 hover:text-black font-bold text-lg press">−</button>
           </div>
 
+          {/* Wooden Frame */}
           <div 
-            ref={boardRef} 
-            className="absolute inset-0 z-0 origin-center transition-transform duration-75"
+            className="relative w-full max-w-5xl aspect-[4/3] sm:aspect-[16/10] rounded-[1.5rem] shadow-[0_25px_50px_rgba(0,0,0,0.6),0_0_100px_rgba(0,0,0,0.2)] border-[14px] sm:border-[22px] border-[#ca7c45] bg-[#d38b58] overflow-hidden origin-center transition-transform duration-75 shrink-0"
             style={{ transform: `scale(${boardScale})` }}
-            onWheel={handleWheel}
           >
+            {/* Inner frame bevel */}
+            <div className="absolute inset-0 border-[6px] sm:border-[8px] border-[#9e5623] pointer-events-none z-30" />
+            <div className="absolute inset-0 border-t-[8px] border-l-[8px] border-black/20 pointer-events-none z-30 mix-blend-multiply" />
+            <div className="absolute inset-0 border-b-[8px] border-r-[8px] border-white/20 pointer-events-none z-30 mix-blend-screen" />
+            
+            {/* Cork texture/noise */}
+            <div className="absolute inset-0 opacity-[0.25] mix-blend-multiply pointer-events-none z-0" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")` }} />
+
+            <Droppable id="board" className="absolute inset-0 z-10 overflow-hidden">
+              <div 
+                ref={boardRef} 
+                className="absolute inset-0 z-0"
+              >
             {/* Connecting Strings */}
             <svg className="absolute inset-0 w-full h-full pointer-events-none z-0" style={{ filter: 'drop-shadow(0 4px 6px rgba(0,0,0,0.5))' }}>
               <AnimatePresence>
@@ -223,28 +237,35 @@ export default function InvestigationScreen({ headline, onSubmit, onAbandon }) {
             </svg>
 
             {/* Central Polaroid */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center justify-center p-3 sm:p-4 bg-[#fdfcf9] pb-8 sm:pb-10 shadow-card rounded-sm rotate-[-2deg] z-10 max-w-[220px] sm:max-w-[260px] border border-[#e6ded3]">
-              <div className="absolute -top-4 left-1/2 -translate-x-1/2 text-red-600 text-4xl drop-shadow-md z-20">📌</div>
-              <div className="w-44 h-44 sm:w-52 sm:h-52 bg-black overflow-hidden relative border border-gray-300 shadow-inner">
-                {headline.video ? (
-                  <video
-                    src={headline.video}
-                    muted
-                    loop
-                    autoPlay
-                    playsInline
-                    className="absolute inset-0 h-full w-full object-cover opacity-90"
-                  />
-                ) : (
-                  <div className="absolute inset-0 flex items-center justify-center text-6xl">
-                    {headline.thumbnail}
-                  </div>
-                )}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center justify-center p-3 sm:p-4 bg-[#ebd9c8] pb-8 sm:pb-10 shadow-[0_10px_20px_rgba(0,0,0,0.3)] rounded-sm rotate-[-1deg] z-10 max-w-[220px] sm:max-w-[260px]">
+              {/* Pushpin */}
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-3.5 h-3.5 rounded-full bg-[#c82424] shadow-[inset_-2px_-2px_4px_rgba(0,0,0,0.4),0_4px_4px_rgba(0,0,0,0.3)] z-20">
+                <div className="absolute top-0.5 left-0.5 w-1.5 h-1.5 rounded-full bg-white/50" />
+                <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-[1px] h-3 bg-black/40 -z-10 shadow-[1px_2px_2px_rgba(0,0,0,0.3)]" />
               </div>
-              <div className="mt-4 font-chaos text-[11px] sm:text-[13px] text-black text-center leading-snug px-2">
+              
+              <div className="w-44 h-44 sm:w-52 sm:h-52 bg-white pt-2 px-2 overflow-hidden relative shadow-sm">
+                <div className="w-full h-full bg-black relative overflow-hidden">
+                  {headline.video ? (
+                    <video
+                      src={headline.video}
+                      muted
+                      loop
+                      autoPlay
+                      playsInline
+                      className="absolute inset-0 h-full w-full object-cover opacity-90"
+                    />
+                  ) : (
+                    <div className="absolute inset-0 flex items-center justify-center text-6xl">
+                      {headline.thumbnail}
+                    </div>
+                  )}
+                </div>
+              </div>
+              <div className="mt-4 font-chaos text-[11px] sm:text-[13px] text-[#5a4c40] text-center leading-snug px-2">
                 {headline.headline}
               </div>
-              <div className="mt-1 text-[9px] font-mono text-black/50 uppercase tracking-widest">
+              <div className="mt-1 text-[9px] font-mono text-[#8a7c6c] uppercase tracking-widest">
                 @{headline.fakeSource}
               </div>
             </div>
@@ -267,6 +288,8 @@ export default function InvestigationScreen({ headline, onSubmit, onAbandon }) {
             })}
           </div>
         </Droppable>
+          </div>
+        </div>
 
         {/* Verdict Floating Bar */}
         <div className={`absolute bottom-[240px] sm:bottom-[280px] left-0 right-0 px-3 transition-transform duration-500 z-30 flex justify-center pointer-events-none ${boardItems.length > 0 ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
@@ -373,8 +396,12 @@ function FolderVisual({ item, dragging = false, onBoard = false, onTap }) {
   if (onBoard) {
     // Pinned article look
     return (
-      <div className={`relative bg-[#fdfcf9] w-[140px] sm:w-[160px] p-2 sm:p-3 shadow-card border border-[#e6ded3] text-[#1c1b18] ${dragging ? 'scale-110 rotate-3 z-50 shadow-2xl' : ''}`}>
-        <div className="absolute -top-3 left-1/2 -translate-x-1/2 text-red-600 text-2xl sm:text-3xl drop-shadow-sm z-30">📌</div>
+      <div className={`relative bg-[#fdfcf9] w-[140px] sm:w-[160px] p-2 sm:p-3 shadow-[0_5px_15px_rgba(0,0,0,0.2)] border border-[#e6ded3] text-[#1c1b18] ${dragging ? 'scale-110 rotate-3 z-50 shadow-2xl' : ''}`}>
+        {/* Pushpin */}
+        <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-3.5 h-3.5 rounded-full bg-[#c82424] shadow-[inset_-2px_-2px_4px_rgba(0,0,0,0.4),0_4px_4px_rgba(0,0,0,0.3)] z-30">
+          <div className="absolute top-0.5 left-0.5 w-1.5 h-1.5 rounded-full bg-white/50" />
+          <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-[1px] h-3 bg-black/40 -z-10 shadow-[1px_2px_2px_rgba(0,0,0,0.3)]" />
+        </div>
         <div className="text-[18px] sm:text-[22px] mb-1.5">{typeIcon(item.type)}</div>
         <div className="text-[10px] sm:text-[11px] font-bold text-black/90 line-clamp-4 leading-snug font-serif">
           {item.title}

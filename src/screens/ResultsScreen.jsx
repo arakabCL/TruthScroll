@@ -1,35 +1,4 @@
 import { motion } from 'framer-motion'
-import { useEffect, useState } from 'react'
-
-const verdictColor = (v) => {
-  switch (v) {
-    case 'TRUE': return 'bg-emerald-500 text-black'
-    case 'FALSE': return 'bg-red-500 text-white'
-    case 'MISLEADING': return 'bg-amber-400 text-black'
-    case 'SATIRE': return 'bg-fuchsia-500 text-white'
-    case 'UNVERIFIABLE': return 'bg-slate-400 text-black'
-    default: return 'bg-slate-400 text-black'
-  }
-}
-
-const relevanceLabel = (r) => {
-  switch (r) {
-    case 'supports': return 'supports'
-    case 'debunks': return 'debunks'
-    case 'misleading': return 'misleading framing'
-    case 'irrelevant': return 'irrelevant'
-    default: return r
-  }
-}
-
-const credChip = (c) => {
-  switch (c) {
-    case 'high': return { label: 'HIGH CRED', cls: 'bg-emerald-500/20 text-emerald-300 ring-emerald-400/40' }
-    case 'medium': return { label: 'MEDIUM', cls: 'bg-amber-500/20 text-amber-300 ring-amber-400/40' }
-    case 'low': return { label: 'LOW CRED', cls: 'bg-red-500/20 text-red-300 ring-red-400/40' }
-    default: return { label: c, cls: 'bg-white/10 text-white/70 ring-white/20' }
-  }
-}
 
 export default function ResultsScreen({
   result,
@@ -41,227 +10,158 @@ export default function ResultsScreen({
   isRoundOver,
 }) {
   const { headline, chosenVerdict, correct, board, breakdown } = result
-  const [displayTotal, setDisplayTotal] = useState(runningScore - breakdown.total)
-
-  // Count-up animation for running total
-  useEffect(() => {
-    const start = runningScore - breakdown.total
-    const end = runningScore
-    const duration = 900
-    const t0 = performance.now()
-    let raf
-    const tick = (t) => {
-      const k = Math.min(1, (t - t0) / duration)
-      const eased = 1 - Math.pow(1 - k, 3)
-      setDisplayTotal(Math.round(start + (end - start) * eased))
-      if (k < 1) raf = requestAnimationFrame(tick)
-    }
-    raf = requestAnimationFrame(tick)
-    return () => cancelAnimationFrame(raf)
-  }, [runningScore, breakdown.total])
-
-  const progressPct = (headlineIndex + 1) / totalHeadlines
 
   return (
-    <div className="relative flex h-[100dvh] w-full flex-col overflow-y-auto bg-[#030407] text-white">
-      {/* Background gradients */}
-      <div className="absolute inset-0 bg-glass-dark pointer-events-none" />
-      <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] bg-feed-accent/10 blur-[100px] pointer-events-none rounded-full" />
-      <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-feed-lime/10 blur-[100px] pointer-events-none rounded-full" />
+    <div className="relative flex min-h-[100dvh] w-full items-center justify-center bg-[#2b221a] p-4 sm:p-8 overflow-hidden text-[#3b2a1a] selection:bg-black/10 shadow-[inset_0_0_150px_rgba(0,0,0,0.8)]">
       
-      {/* Confetti-ish glow when correct */}
-      {correct && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(198,255,61,0.18),transparent_60%)]"
-        />
-      )}
+      {/* Premium dark desk texture */}
+      <div className="absolute inset-0 opacity-[0.25] pointer-events-none mix-blend-overlay" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")` }} />
+      <div className="absolute inset-0 pointer-events-none mix-blend-multiply opacity-50 bg-gradient-to-br from-[#7a4c28] to-[#120a05]" />
+           
+      {/* Desk Decorations (Pens, Paperclips) */}
+      <div className="absolute top-10 left-[10%] text-5xl rotate-45 opacity-60 drop-shadow-md z-0 pointer-events-none">📎</div>
+      <div className="absolute bottom-20 left-[15%] text-6xl -rotate-12 opacity-80 drop-shadow-md z-0 pointer-events-none">🖋️</div>
+      <div className="absolute bottom-10 right-[15%] text-5xl rotate-[70deg] opacity-60 drop-shadow-md z-0 pointer-events-none">📎</div>
+      <div className="absolute top-20 right-[5%] text-6xl rotate-[120deg] opacity-70 drop-shadow-md z-0 pointer-events-none">✏️</div>
 
-      <div className="relative z-10 mx-auto w-full max-w-xl px-5 pb-8 pt-[max(env(safe-area-inset-top),20px)]">
-        {/* Progress */}
-        <div className="mb-3 flex items-center justify-between text-[11px] font-mono uppercase tracking-widest text-white/50">
-          <span>Headline {Math.min(headlineIndex + 1, totalHeadlines)} of {totalHeadlines}</span>
-          <span>Round score</span>
-        </div>
-        <div className="flex items-center gap-3">
-          <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-white/10">
-            <motion.div
-              initial={{ width: 0 }}
-              animate={{ width: `${progressPct * 100}%` }}
-              transition={{ duration: 0.6, ease: 'easeOut' }}
-              className="h-full rounded-full bg-feed-lime"
-            />
-          </div>
-          <div className="font-mono text-[14px] tabular-nums text-white">{displayTotal}</div>
+      {/* Main Manila Folder */}
+      <motion.div 
+        initial={{ y: 50, opacity: 0, rotate: -2 }}
+        animate={{ y: 0, opacity: 1, rotate: 1 }}
+        transition={{ type: 'spring', stiffness: 200, damping: 20 }}
+        className="relative w-full max-w-xl bg-[#e4c49d] rounded-sm shadow-card border-2 border-[#d2ab7a] p-5 sm:p-8 flex flex-col font-serif text-[#3b2a1a] z-10"
+      >
+        {/* Folder Tab */}
+        <div className="absolute -top-10 left-10 w-48 h-10 bg-[#e4c49d] rounded-t-xl border-t-2 border-l-2 border-r-2 border-[#d2ab7a] shadow-[0_-4px_6px_rgba(0,0,0,0.05)] flex items-center px-4 -z-10">
+          <span className="text-[10px] font-mono tracking-widest uppercase opacity-50">Case File {headlineIndex + 1}</span>
         </div>
 
-        {/* Verdict banner */}
-        <motion.div
-          initial={{ scale: 0.95, opacity: 0, y: 10 }}
-          animate={{ scale: 1, opacity: 1, y: 0 }}
-          transition={{ type: 'spring', stiffness: 220, damping: 20, delay: 0.1 }}
-          className={`mt-6 overflow-hidden rounded-2xl border ${correct ? 'border-feed-lime/30 shadow-glow-lime' : 'border-feed-accent/30 shadow-glow'} bg-white/[0.03] backdrop-blur-xl`}
+        {/* Score Sticky Note */}
+        <motion.div 
+          initial={{ scale: 0, rotate: 0 }}
+          animate={{ scale: 1, rotate: 12 }}
+          transition={{ delay: 0.4, type: 'spring' }}
+          className="absolute -top-6 -right-6 w-20 h-20 bg-[#fca5a5] shadow-md flex flex-col items-center justify-center font-serif font-bold text-black border border-red-300 z-30"
         >
-          <div className={`flex items-center gap-3 px-5 py-4 ${correct ? 'bg-feed-lime/15' : 'bg-red-500/10'}`}>
-            <span
-              className={`flex h-10 w-10 items-center justify-center rounded-full text-xl ${
-                correct ? 'bg-feed-lime text-black' : 'bg-red-500 text-white'
-              }`}
-            >
-              {correct ? '✓' : '✕'}
-            </span>
-            <div>
-              <div className="text-[11px] font-mono uppercase tracking-widest text-white/60">
-                {correct ? 'Great read' : 'Not quite — here\u2019s what happened'}
-              </div>
-              <div className="font-display text-[18px] font-bold">
-                {correct ? 'You called it right' : 'Close, but look again'}
-              </div>
-            </div>
-          </div>
+          <span className="text-[9px] uppercase tracking-widest opacity-70">Points</span>
+          <span className="text-2xl border-b-2 border-black/20 pb-0.5">+{breakdown.total}</span>
+        </motion.div>
 
-          <div className="px-5 py-4">
-            <div className="mb-2 flex flex-wrap items-center gap-2">
-              <span className="text-[11px] font-mono uppercase tracking-widest text-white/50">
-                you said
-              </span>
-              <span className={`rounded-full px-2 py-0.5 text-[11px] font-bold uppercase tracking-widest ${verdictColor(chosenVerdict)}`}>
-                {chosenVerdict}
-              </span>
-              {!correct && (
-                <>
-                  <span className="text-[11px] font-mono uppercase tracking-widest text-white/50">
-                    actual
-                  </span>
-                  <span className={`rounded-full px-2 py-0.5 text-[11px] font-bold uppercase tracking-widest ${verdictColor(headline.correctVerdict)}`}>
-                    {headline.correctVerdict}
-                  </span>
-                </>
+        {/* Content Top Section */}
+        <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 border-b-2 border-[#d2ab7a]/40 pb-6 mb-6 relative">
+          {/* Big Paperclip */}
+          <div className="absolute -top-10 left-8 text-7xl text-gray-500/80 rotate-12 drop-shadow-md z-30 pointer-events-none">📎</div>
+          
+          {/* Polaroid */}
+          <div className="w-36 sm:w-44 shrink-0 bg-[#fdfcf9] p-2 pb-8 sm:p-3 sm:pb-10 shadow-md rounded-sm rotate-[-4deg] border border-[#e6ded3] self-start z-20">
+            <div className="w-full aspect-square bg-black overflow-hidden relative shadow-inner mb-2 border border-black/10">
+              {headline.video ? (
+                <video src={headline.video} autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover opacity-90" />
+              ) : (
+                <div className="absolute inset-0 flex items-center justify-center text-5xl bg-[#1c1b18] text-white">
+                  {headline.thumbnail}
+                </div>
               )}
             </div>
-            <div className="font-serif text-[15px] leading-relaxed text-white/85">
-              {headline.explanation}
+            <div className="text-center font-serif italic text-xs sm:text-sm text-black/70 font-bold opacity-80">
+              Picture of Video
             </div>
           </div>
-        </motion.div>
-
-        {/* Score breakdown */}
-        <div className="mt-5 grid grid-cols-3 gap-2">
-          <StatTile label="Verdict" value={breakdown.verdict} max={50} />
-          <StatTile label="Sources" value={breakdown.source} max={30} />
-          <StatTile label="Speed" value={breakdown.speed} max={20} />
-        </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-          className="mt-3 flex items-center justify-between rounded-xl border border-white/5 bg-white/5 px-5 py-4 shadow-glass backdrop-blur-md"
-        >
-          <span className="text-[12px] font-mono uppercase tracking-widest text-white/60">
-            Headline score
-          </span>
-          <span className="font-display text-3xl font-bold tabular-nums text-white drop-shadow-md">
-            +{breakdown.total}
-          </span>
-        </motion.div>
-
-        {/* Evidence review */}
-        <div className="mt-6">
-          <div className="mb-2 flex items-center justify-between">
-            <div className="font-display text-[15px] font-bold uppercase tracking-wider text-white/90">
-              Your Evidence Board
-            </div>
-            <div className="text-[11px] font-mono uppercase tracking-widest text-white/50">
-              credibility revealed
-            </div>
-          </div>
-
-          <div className="space-y-2">
-            {board.length === 0 && (
-              <div className="rounded-xl border border-dashed border-white/15 p-4 text-center text-[13px] italic text-white/50">
-                You didn&rsquo;t pin any evidence — next time, back up your call.
-              </div>
-            )}
-            {board.map((e) => {
-              const chip = credChip(e.credibility)
-              const strong = e.credibility === 'high' && (e.relevance === 'supports' || e.relevance === 'debunks')
-              return (
-                <div
-                  key={e.id}
-                  className={`flex items-center gap-3 rounded-xl border px-4 py-3 transition-colors ${
-                    strong ? 'border-feed-lime/40 bg-feed-lime/5 shadow-[0_0_15px_rgba(204,255,0,0.1)]' : 'border-white/10 bg-white/5 hover:bg-white/10'
-                  }`}
-                >
-                  <div className="min-w-0 flex-1">
-                    <div className="truncate text-[13px] font-semibold text-white">
-                      {e.title}
-                    </div>
-                    <div className="truncate text-[11px] font-mono text-white/50">
-                      {e.source} · {relevanceLabel(e.relevance)}
-                    </div>
-                  </div>
-                  <span className={`shrink-0 rounded-full px-2 py-0.5 text-[10px] font-bold uppercase tracking-widest ring-1 ${chip.cls}`}>
-                    {chip.label}
-                  </span>
-                </div>
-              )
-            })}
+          
+          {/* Findings */}
+          <div className="flex-1">
+             <div className="text-lg sm:text-xl font-bold uppercase tracking-wider mb-4 border-b-2 border-[#3b2a1a] inline-block pb-1">
+               Subject: VIRAL POST #{headlineIndex + 1}
+             </div>
+             <div className="text-base sm:text-lg font-bold mb-2">Findings:</div>
+             <ul className="space-y-2 text-[13px] sm:text-[15px] font-medium leading-tight">
+                {board.length === 0 ? (
+                  <li className="italic text-black/40">- No evidence submitted</li>
+                ) : (
+                  board.map(e => (
+                    <li key={e.id} className="flex items-start gap-2">
+                      <span className="font-bold opacity-70">-</span>
+                      <span className="leading-snug">{e.title}</span>
+                    </li>
+                  ))
+                )}
+             </ul>
           </div>
         </div>
 
-        {/* Actions */}
-        <div className="mt-8 flex flex-col gap-3">
-          {!isRoundOver ? (
-            <button
-              onClick={onNext}
-              className="press w-full rounded-full bg-feed-accent py-4.5 text-center font-display text-[16px] font-bold uppercase tracking-widest text-white shadow-glow hover:bg-feed-accent/90 transition-colors"
+        {/* Conclusion Section */}
+        <div className="border-b-2 border-[#d2ab7a]/40 pb-6 mb-6">
+          <div className="text-base sm:text-lg font-bold mb-2">Conclusion:</div>
+          <p className="text-[14px] sm:text-[16px] leading-relaxed whitespace-pre-wrap font-medium">
+            {headline.explanation}
+          </p>
+        </div>
+
+        {/* Verdict Stamp Area */}
+        <div className="mt-4 self-end w-full max-w-[300px] relative">
+          <div className="text-sm font-bold mb-1 ml-2 opacity-80">Verdict:</div>
+          <div className="relative border-[5px] border-[#3b2a1a] p-4 sm:p-5 rotate-[-3deg] inline-block w-full text-center group">
+            {/* Ink bleed effect */}
+            <div className="absolute inset-0 opacity-[0.03] bg-black"></div>
+            
+            <span className="text-[#3b2a1a] text-3xl sm:text-4xl font-chaos uppercase tracking-tighter block leading-none mix-blend-multiply">
+              {headline.correctVerdict}
+            </span>
+            
+            {/* Hand-drawn scribble over verdict if needed */}
+            <div className="absolute bottom-2 left-4 right-4 h-1 bg-[#3b2a1a] opacity-60 rounded-full rotate-1"></div>
+            <div className="absolute top-2 left-6 right-2 h-[2px] bg-[#3b2a1a] opacity-40 rounded-full -rotate-1"></div>
+          </div>
+
+          {!correct && (
+            <motion.div 
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ delay: 0.6, type: 'spring' }}
+              className="absolute -bottom-4 -left-6 sm:-left-12 rotate-12 text-sm font-bold bg-[#fca5a5] border border-red-400 text-red-900 px-3 py-1 shadow-sm whitespace-nowrap"
             >
-              Next headline →
-            </button>
-          ) : (
-            <>
-              <div className="rounded-2xl border border-white/10 bg-gradient-to-br from-feed-lime/15 to-feed-accent/10 p-5 text-center">
-                <div className="text-[11px] font-mono uppercase tracking-widest text-white/60">
-                  Round complete
-                </div>
-                <div className="mt-1 font-display text-4xl font-bold">{runningScore}</div>
-                <div className="text-[12px] text-white/60">out of {totalHeadlines * 100}</div>
-              </div>
-              <button
-                onClick={onRestart}
-                className="press w-full rounded-full bg-white py-4.5 text-center font-display text-[16px] font-bold uppercase tracking-widest text-black hover:bg-white/90 transition-colors"
-              >
-                Play another round
-              </button>
-            </>
+              You said: {chosenVerdict}
+            </motion.div>
           )}
         </div>
-      </div>
-    </div>
-  )
-}
+      </motion.div>
 
-function StatTile({ label, value, max }) {
-  const pct = Math.min(1, value / max)
-  return (
-    <div className="rounded-xl border border-white/5 bg-white/5 p-4 shadow-glass backdrop-blur-sm">
-      <div className="text-[10px] font-mono uppercase tracking-widest text-white/50">
-        {label}
-      </div>
-      <div className="mt-1 flex items-baseline gap-1">
-        <span className="font-display text-[24px] font-bold tabular-nums drop-shadow">{value}</span>
-        <span className="text-[11px] text-white/40">/ {max}</span>
-      </div>
-      <div className="mt-3 h-1.5 overflow-hidden rounded-full bg-white/10">
-        <motion.div
-          initial={{ width: 0 }}
-          animate={{ width: `${pct * 100}%` }}
-          transition={{ duration: 0.8, ease: 'easeOut', delay: 0.1 }}
-          className="h-full rounded-full bg-feed-lime shadow-[0_0_10px_rgba(204,255,0,0.5)]"
-        />
-      </div>
+      {/* Action Sticky Notes */}
+      <motion.button 
+        initial={{ x: -100, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ delay: 0.2 }}
+        onClick={onRestart} 
+        className="absolute left-2 sm:left-10 md:left-20 top-[60%] sm:top-1/2 -translate-y-1/2 w-20 sm:w-24 h-20 sm:h-24 bg-[#fde047] shadow-lg rotate-[-8deg] flex flex-col items-center justify-center font-serif font-bold text-xs sm:text-sm press hover:scale-105 border border-[#eab308]/50 text-black/80 z-20"
+      >
+        <span className="uppercase tracking-widest text-center">Try<br/>Again</span>
+        <span className="text-xl sm:text-2xl mt-1">←</span>
+      </motion.button>
+
+      {!isRoundOver ? (
+        <motion.button 
+          initial={{ x: 100, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ delay: 0.3 }}
+          onClick={onNext} 
+          className="absolute right-2 sm:right-10 md:right-20 top-[40%] sm:top-1/2 -translate-y-1/2 w-20 sm:w-24 h-20 sm:h-24 bg-[#fde047] shadow-lg rotate-[5deg] flex flex-col items-center justify-center font-serif font-bold text-xs sm:text-sm press hover:scale-105 border border-[#eab308]/50 text-black/80 z-20"
+        >
+          <span className="uppercase tracking-widest text-center mb-1">Continue</span>
+          <span className="text-xl sm:text-2xl leading-none">→</span>
+        </motion.button>
+      ) : (
+        <motion.button 
+          initial={{ x: 100, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ delay: 0.3 }}
+          onClick={onRestart} 
+          className="absolute right-2 sm:right-10 md:right-20 top-[40%] sm:top-1/2 -translate-y-1/2 w-24 sm:w-28 h-24 sm:h-28 bg-[#fde047] shadow-lg rotate-[5deg] flex flex-col items-center justify-center font-serif font-bold text-xs sm:text-sm press hover:scale-105 border border-[#eab308]/50 text-black/80 z-20"
+        >
+          <span className="uppercase tracking-widest text-center mb-1">New<br/>Round</span>
+          <span className="text-xl sm:text-2xl leading-none">→</span>
+          <span className="text-[10px] mt-1 opacity-60">Total: {runningScore}</span>
+        </motion.button>
+      )}
     </div>
   )
 }

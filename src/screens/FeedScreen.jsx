@@ -142,23 +142,23 @@ export default function FeedScreen({
       </AnimatePresence>
 
       {/* Mobile: full-screen feed. Desktop: static iPhone frame in the center, feed scrolls inside it */}
-      <div className="relative h-full w-full sm:flex sm:items-center sm:justify-center sm:py-4">
-        {/* Static iPhone bezel — desktop only. Real iPhone aspect 9:19.5 */}
-        <div className="relative h-full w-full sm:h-full sm:max-h-[960px] sm:w-auto sm:aspect-[9/19.5] sm:p-[10px] sm:bg-gradient-to-b sm:from-[#0d0d0e] sm:to-[#1a1a1c] sm:rounded-[52px] sm:shadow-[0_30px_80px_-10px_rgba(0,0,0,0.7),0_0_0_1px_rgba(255,255,255,0.08)] sm:ring-1 sm:ring-black/40 sm:shrink-0">
+      <div className="relative h-full w-full sm:flex sm:items-center sm:justify-center sm:py-6">
+        {/* Static iPhone bezel — desktop only. Outer aspect ratio accounts for 12px padding to keep inner exactly 393:852 */}
+        <div className="relative h-full w-full sm:h-full sm:max-h-[900px] sm:w-auto sm:aspect-[417/876] sm:p-[12px] sm:bg-gradient-to-b sm:from-[#0d0d0e] sm:to-[#1a1a1c] sm:rounded-[55px] sm:shadow-[0_30px_80px_-10px_rgba(0,0,0,0.7),0_0_0_1px_rgba(255,255,255,0.08)] sm:ring-1 sm:ring-black/40 sm:shrink-0">
 
           {/* Notch — desktop only */}
-          <div className="hidden sm:flex absolute top-[16px] left-1/2 -translate-x-1/2 z-50 h-[26px] w-[110px] items-center justify-end pr-3 rounded-full bg-black ring-1 ring-white/5 pointer-events-none">
-            <div className="h-[6px] w-[6px] rounded-full bg-[#0a0a0a] ring-1 ring-[#2a2a2a]" />
+          <div className="hidden sm:flex absolute top-[16px] left-1/2 -translate-x-1/2 z-50 h-[28px] w-[115px] items-center justify-end pr-3 rounded-full bg-black ring-1 ring-white/5 pointer-events-none">
+            <div className="h-[8px] w-[8px] rounded-full bg-[#0a0a0a] ring-1 ring-[#2a2a2a]" />
           </div>
 
           {/* Side buttons — desktop only */}
-          <div className="hidden sm:block absolute -left-[2px] top-[80px] h-7 w-[3px] rounded-l-sm bg-[#08080a] z-40" />
-          <div className="hidden sm:block absolute -left-[2px] top-[125px] h-12 w-[3px] rounded-l-sm bg-[#08080a] z-40" />
-          <div className="hidden sm:block absolute -left-[2px] top-[180px] h-12 w-[3px] rounded-l-sm bg-[#08080a] z-40" />
-          <div className="hidden sm:block absolute -right-[2px] top-[140px] h-20 w-[3px] rounded-r-sm bg-[#08080a] z-40" />
+          <div className="hidden sm:block absolute -left-[2px] top-[100px] h-7 w-[3px] rounded-l-sm bg-[#08080a] z-40" />
+          <div className="hidden sm:block absolute -left-[2px] top-[145px] h-14 w-[3px] rounded-l-sm bg-[#08080a] z-40" />
+          <div className="hidden sm:block absolute -left-[2px] top-[210px] h-14 w-[3px] rounded-l-sm bg-[#08080a] z-40" />
+          <div className="hidden sm:block absolute -right-[2px] top-[160px] h-24 w-[3px] rounded-r-sm bg-[#08080a] z-40" />
 
           {/* Inner phone screen — clips the scroll feed to the phone shape */}
-          <div className="relative h-full w-full sm:rounded-[44px] sm:overflow-hidden">
+          <div className="relative h-full w-full sm:rounded-[43px] sm:overflow-hidden bg-black">
             <div
               ref={scrollRef}
               className="feed-scroll no-scrollbar"

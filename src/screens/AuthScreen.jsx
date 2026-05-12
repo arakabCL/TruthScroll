@@ -51,9 +51,9 @@ export default function AuthScreen({ onContinueAsGuest, onAuthed }) {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.1)_0%,rgba(0,0,0,0.7)_85%)] pointer-events-none" />
       </div>
 
-      <div className="relative z-10 w-full max-w-sm px-6">
-        <div className="text-center">
-          <div className="font-chaos text-[clamp(34px,9vw,80px)] leading-none tracking-tight text-white drop-shadow-[0_8px_30px_rgba(0,0,0,0.6)]">
+      <div className="relative z-10 mx-auto w-full max-w-sm px-6 flex flex-col items-center">
+        <div className="w-full text-center">
+          <div className="font-chaos text-[clamp(34px,7vw,56px)] leading-none tracking-tight text-white drop-shadow-[0_8px_30px_rgba(0,0,0,0.6)]">
             TRUTH<span className="text-feed-accent">SCROLL</span>
           </div>
           <div className="mt-2 font-serif italic text-white/80 text-sm">

@@ -228,21 +228,21 @@ export default function App() {
     const audio = new Audio('/audio/detective-ambience.mp3')
     audio.loop = true
     audio.volume = 0.25
+    audio.preload = 'auto'
+    audio.playsInline = true
+    audio.setAttribute('playsinline', '')
+    audio.setAttribute('webkit-playsinline', '')
     const tryPlay = () => { audio.play().catch(() => {}) }
     tryPlay()
+    const events = ['click', 'pointerdown', 'pointerup', 'touchstart', 'touchend', 'keydown']
     const unlock = () => {
       tryPlay()
-      window.removeEventListener('pointerdown', unlock)
-      window.removeEventListener('keydown', unlock)
-      window.removeEventListener('touchstart', unlock)
+      // Only stop listening once playback actually started
+      if (!audio.paused) events.forEach((ev) => window.removeEventListener(ev, unlock))
     }
-    window.addEventListener('pointerdown', unlock)
-    window.addEventListener('keydown', unlock)
-    window.addEventListener('touchstart', unlock)
+    events.forEach((ev) => window.addEventListener(ev, unlock))
     return () => {
-      window.removeEventListener('pointerdown', unlock)
-      window.removeEventListener('keydown', unlock)
-      window.removeEventListener('touchstart', unlock)
+      events.forEach((ev) => window.removeEventListener(ev, unlock))
       audio.pause()
       audio.src = ''
     }

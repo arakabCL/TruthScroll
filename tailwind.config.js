@@ -44,12 +44,20 @@ export default {
         pulseSoft: {
           '0%, 100%': { opacity: '1' },
           '50%': { opacity: '0.7' },
-        }
+        },
+        shake: {
+          '0%, 100%': { transform: 'translateX(0)' },
+          '20%': { transform: 'translateX(-6px)' },
+          '40%': { transform: 'translateX(6px)' },
+          '60%': { transform: 'translateX(-4px)' },
+          '80%': { transform: 'translateX(4px)' },
+        },
       },
       animation: {
         floatUp: 'floatUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards',
         shimmer: 'shimmer 2.4s linear infinite',
         pulseSoft: 'pulseSoft 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        shake: 'shake 0.4s ease-in-out',
       },
       backgroundImage: {
         'glass': 'linear-gradient(135deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.01) 100%)',

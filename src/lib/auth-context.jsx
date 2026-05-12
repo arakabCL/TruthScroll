@@ -84,6 +84,9 @@ export function AuthProvider({ children }) {
     }
   }, [user])
 
+  // Stable identity so consumers that depend on it in effects don't loop
+  const clearError = useCallback(() => setError(null), [])
+
   const value = useMemo(() => ({
     user,
     remoteProgress,
@@ -93,8 +96,8 @@ export function AuthProvider({ children }) {
     signup,
     logout,
     syncProgress,
-    clearError: () => setError(null),
-  }), [user, remoteProgress, loading, error, login, signup, logout, syncProgress])
+    clearError,
+  }), [user, remoteProgress, loading, error, login, signup, logout, syncProgress, clearError])
 
   return <AuthCtx.Provider value={value}>{children}</AuthCtx.Provider>
 }

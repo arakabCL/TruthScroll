@@ -153,7 +153,7 @@ function FeedCard({
           <div className="absolute inset-x-0 bottom-0 z-20 px-4 pb-[max(env(safe-area-inset-bottom),24px)] sm:pb-6">
             <div className="pr-16 sm:pr-4">
               <h2
-                className="font-display text-[28px] font-bold leading-[1.05] text-white drop-shadow-lg"
+                className="font-display text-[20px] sm:text-[22px] font-bold leading-[1.1] text-white drop-shadow-lg"
                 style={{ textWrap: 'balance' }}
               >
                 {headline.headline}
@@ -183,7 +183,7 @@ function FeedCard({
         {/* /Video screen */}
 
         {/* Right-edge floating actions — overlay inside the screen */}
-        <div className="absolute right-2 bottom-20 z-30 flex flex-col items-center gap-5">
+        <div className="absolute right-2 bottom-20 z-30 flex flex-col items-center gap-4">
           <motion.button
             onClick={(e) => {
               e.stopPropagation()
@@ -193,11 +193,11 @@ function FeedCard({
             whileTap={{ scale: 0.92 }}
             className="press group relative flex flex-col items-center"
           >
-            <span className="absolute -inset-3 rounded-full bg-feed-accent/30 blur-xl transition duration-500 group-hover:bg-feed-accent/60 group-hover:blur-2xl animate-pulseSoft" />
-            <div className="relative flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-feed-accent to-rose-600 text-white shadow-glow ring-2 ring-white/80 overflow-hidden transition-transform duration-300">
-              <Magnifier className="h-8 w-8 drop-shadow-sm" />
+            <span className="absolute -inset-2.5 rounded-full bg-feed-accent/30 blur-xl transition duration-500 group-hover:bg-feed-accent/60 group-hover:blur-2xl animate-pulseSoft" />
+            <div className="relative flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-feed-accent to-rose-600 text-white shadow-glow ring-2 ring-white/80 overflow-hidden transition-transform duration-300">
+              <Magnifier className="h-6 w-6 drop-shadow-sm" />
             </div>
-            <span className="mt-2 text-[11px] font-bold uppercase tracking-widest text-white sm:text-white/80 drop-shadow">
+            <span className="mt-1.5 text-[10px] font-bold uppercase tracking-widest text-white sm:text-white/80 drop-shadow">
               Investigate
             </span>
           </motion.button>
@@ -210,7 +210,7 @@ function FeedCard({
               setLiked((v) => !v)
             }}
           >
-            <Heart filled={liked} className="h-6 w-6" />
+            <Heart filled={liked} className="h-5 w-5" />
           </ActionButton>
 
           <ActionButton
@@ -220,7 +220,7 @@ function FeedCard({
               onScrollNext()
             }}
           >
-            <ChevronDown className="h-6 w-6" />
+            <ChevronDown className="h-5 w-5" />
           </ActionButton>
         </div>
       </div>
@@ -267,15 +267,15 @@ function ActionButton({ children, onClick, label, highlight }) {
       className="press flex flex-col items-center gap-1.5 text-white"
     >
       <span
-        className={`flex h-[46px] w-[46px] items-center justify-center rounded-full backdrop-blur-xl shadow-glass transition-colors duration-300 ${
-          highlight 
-            ? 'bg-feed-accent/90 text-white ring-1 ring-feed-accent/50 shadow-glow' 
+        className={`flex h-[38px] w-[38px] items-center justify-center rounded-full backdrop-blur-xl shadow-glass transition-colors duration-300 ${
+          highlight
+            ? 'bg-feed-accent/90 text-white ring-1 ring-feed-accent/50 shadow-glow'
             : 'bg-white/10 text-white ring-1 ring-white/20 hover:bg-white/20'
         }`}
       >
         {children}
       </span>
-      <span className="text-[10px] font-bold uppercase tracking-widest text-white/80 drop-shadow">
+      <span className="text-[9px] font-bold uppercase tracking-widest text-white/80 drop-shadow">
         {label}
       </span>
     </motion.button>

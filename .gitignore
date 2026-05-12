@@ -4,3 +4,5 @@ dist/
 .claude/
 Video/
 *.local
+data/
+.env

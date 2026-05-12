@@ -1,409 +1,982 @@
 [
   {
     "id": "h1",
-    "headline": "Japanese Scientists Begin FIRST Human Trials of Drug That Regrows Missing Teeth",
-    "video": "/videos/science.mp4",
-    "thumbnail": "🦷",
-    "thumbnailGradient": "from-sky-300 via-indigo-500 to-slate-900",
-    "fakeSource": "FutureMedWire",
+    "headline": "12-Year-Old in Japan Trains Pet Octopus to Complete Simple Math Problems on an Underwater Whiteboard",
+    "video": "/videos/octopus.mp4",
+    "thumbnail": "🐙",
+    "thumbnailGradient": "from-cyan-300 via-sky-600 to-indigo-900",
+    "fakeSource": "WildScienceDaily",
     "sourceVibe": "news",
-    "engagement": { "likes": 287000, "shares": 54200, "timestamp": "5h ago" },
-    "correctVerdict": "TRUE",
-    "explanation": "A team at Kyoto University and Kitano Hospital in Japan genuinely began human trials in 2024 of a drug that blocks the USAG-1 protein, which normally suppresses tooth regrowth. The researchers are aiming for public availability by around 2030. It sounds like science fiction, but it is peer-reviewed, on the clinical-trial registry, and widely reported in credible outlets.",
+    "engagement": {
+      "likes": 2148000,
+      "shares": 487300,
+      "timestamp": "4h ago"
+    },
+    "correctVerdict": "FALSE",
+    "explanation": "The viral video is AI-generated. The posting account @WeirdAquaria is six weeks old and has a history of fake viral clips. Reuters Fact Check traced visual artifacts — drifting suction cups, warping whiteboard text, looped bubble audio — to generative AI. Marine biologists confirm octopi can do shape discrimination but not symbolic math, and a five-year peer-reviewed study found zero acquisition of written numerals across 12,000 trials. No school, family, or aquarium in Tokyo can verify 'Toby' or his octopus 'Doozer' exist. When an extraordinary story has zero coverage from real science journalists and only one freshly minted social account is pushing it, that's the giveaway.",
     "evidencePool": [
       {
         "id": "h1-e1",
-        "type": "document",
-        "title": "jRCT clinical trial registry: Anti-USAG-1 antibody trial",
-        "source": "jrct.niph.go.jp",
-        "credibility": "high",
-        "relevance": "supports"
+        "type": "tiktok",
+        "title": "@WeirdAquaria: 'My friend's octopus does MATH!'",
+        "source": "TikTok @WeirdAquaria",
+        "credibility": "low",
+        "relevance": "supports",
+        "author": "@WeirdAquaria",
+        "date": "2 days ago",
+        "engagement": {
+          "likes": "4.2M",
+          "comments": "89K",
+          "shares": "612K"
+        },
+        "profile": {
+          "createdAgo": "6 weeks ago",
+          "followers": "18.2M",
+          "bio": "weird ocean stuff daily, no haters 🐙"
+        },
+        "body": "OMG you guys 😱 my new BFF Toby (12, from Tokyo) trained his pet OCTOPUS to do MATH on a whiteboard underwater. He shows it \"7 + 4\" and Doozer the octopus DRAWS \"11\" with a tentacle. Like??? Toby is a literal genius and Doozer is the smartest pet alive. Liking this post saves a kraken 🐙✨",
+        "comments": [
+          {
+            "author": "@FishBrainEva",
+            "text": "wait this looks AI tho the fin disappears for a sec",
+            "reply": {
+              "author": "@WeirdAquaria",
+              "text": "❤️❤️ believe in magic bestie"
+            }
+          },
+          {
+            "author": "@JulianTokyoUni",
+            "text": "I live in Tokyo. Never heard of Toby. Where is the school?",
+            "reply": {
+              "author": "@WeirdAquaria",
+              "text": "he's homeschooled 💕"
+            }
+          }
+        ],
+        "expectedTags": [
+          "supports",
+          "sketchy"
+        ]
       },
       {
         "id": "h1-e2",
         "type": "article",
-        "title": "Kitano Hospital press release: tooth regrowth trial begins",
-        "source": "kitano-hp.or.jp",
+        "title": "Reuters Fact Check: viral 'math octopus' video is AI-generated",
+        "source": "Reuters Fact Check",
         "credibility": "high",
-        "relevance": "supports"
+        "relevance": "debunks",
+        "author": "Jamal Okonkwo, Reuters Fact Check Desk",
+        "date": "November 2, 2026",
+        "headlineBig": "Viral 'math octopus' video is AI generated, marine biologists confirm",
+        "body": "A video circulating on TikTok and X claims that a twelve-year-old boy in Tokyo, identified only as 'Toby,' has trained his pet octopus to solve arithmetic problems on a submerged whiteboard. The clip has been shared more than 4 million times.\n\nReuters reviewed the original footage frame by frame and found multiple visual artifacts consistent with AI-generated video, including a pectoral fin that briefly disappears between frames, writing on the whiteboard that warps when the camera pans, and water bubbles that loop in unnatural patterns.\n\nThe posting account, @WeirdAquaria, was created six weeks ago. Two previous viral clips from the same account — a 'singing dolphin' and a 'glow-in-the-dark crab parade' — have been confirmed as AI-generated by Snopes and AFP Fact Check.\n\nNo school, family, aquarium, or marine center in Tokyo has been able to verify the existence of 'Toby' or the octopus. The Tokyo Metropolitan Government's education office told Reuters it has received no inquiries about such a student.\n\nDr. Lena Vargas, a cephalopod cognition researcher at the University of Hawaii, told Reuters: 'Octopi are remarkably intelligent. They open jars, recognize individual humans, and solve novel puzzles. But abstract symbolic math — reading the numeral seven and writing the numeral eleven — is not within their cognitive toolkit. That kind of result would need years of peer-reviewed work to claim.'\n\nVERDICT: FALSE. The video is AI-generated. There is no verified twelve-year-old, no verified octopus, and no verified math.",
+        "expectedTags": [
+          "refutes"
+        ]
       },
       {
         "id": "h1-e3",
-        "type": "article",
-        "title": "Kyoto University team advances tooth-regrowth drug to humans",
-        "source": "The Japan Times",
+        "type": "tweet",
+        "title": "Dr. Lena Vargas thread: 'Ok inbox is on fire about the math octopus…'",
+        "source": "X · @VargasOctopusLab ✓",
         "credibility": "high",
-        "relevance": "supports"
+        "relevance": "debunks",
+        "author": "Dr. Lena Vargas",
+        "handle": "@VargasOctopusLab",
+        "verified": true,
+        "date": "3 days ago",
+        "body": "🧵 Thread of 6 posts",
+        "thread": [
+          {
+            "num": "1/6",
+            "text": "Ok inbox is on fire about the 'math octopus' video. As someone who has studied octopus cognition for 14 years, let me walk you through what is real and what is not."
+          },
+          {
+            "num": "2/6",
+            "text": "Real: octopi are SHOCKINGLY smart. They use tools, escape from sealed tanks, recognize human faces, and remember which humans were mean to them. Genuinely brilliant invertebrates."
+          },
+          {
+            "num": "3/6",
+            "text": "Real-ish: with a LOT of training, an octopus can learn to associate a shape with a reward. Show them a triangle, they reach into the triangle hole and get a snack. This is called discrimination learning."
+          },
+          {
+            "num": "4/6",
+            "text": "NOT REAL: an octopus reading the squiggle '7', reading the squiggle '+4', and producing the squiggle '11'. That is symbolic mathematics and there is zero published evidence any non-human animal does that — much less a kid's pet in Tokyo."
+          },
+          {
+            "num": "5/6",
+            "text": "Also the video has classic AI tells. Look at the suction cups on the third arm. They drift. Real suction cups don't drift."
+          },
+          {
+            "num": "6/6",
+            "text": "Tldr: octopi are cooler than you think. They just don't do algebra. Please stop tagging me, I love you all 🐙💚"
+          }
+        ],
+        "expectedTags": [
+          "refutes"
+        ]
       },
       {
         "id": "h1-e4",
-        "type": "document",
-        "title": "Peer-reviewed study on USAG-1 antibody in mice & ferrets",
-        "source": "Science Advances",
-        "credibility": "high",
-        "relevance": "supports"
+        "type": "reddit",
+        "title": "r/CephalopodLovers: 'Is anyone actually buying this???'",
+        "source": "reddit.com/r/CephalopodLovers",
+        "credibility": "medium",
+        "relevance": "debunks",
+        "author": "u/InkyAndProud",
+        "date": "1 day ago",
+        "subreddit": "r/CephalopodLovers",
+        "score": 3847,
+        "comments_count": 612,
+        "postTitle": "Toby's math octopus 'Doozer' — is anyone buying this???",
+        "body": "Saw this everywhere yesterday. As someone who has kept an octopus (which by the way is REALLY HARD, they escape constantly), this feels wrong. Octopi are puzzle solvers, not symbol readers. What do we think?",
+        "comments": [
+          {
+            "author": "u/TentacleTeacherJP",
+            "score": 1200,
+            "text": "Native Japanese speaker here. The whiteboard in the video shows numbers in a font that does not exist in any Japanese school. Also no twelve-year-old in Japan has an octopus as a pet. They are insanely expensive and our apartments are tiny lol."
+          },
+          {
+            "author": "u/MollyTheMolluskFan",
+            "score": 894,
+            "text": "The account that posted it is six weeks old and has 18 million followers. That is impossible without bots or paid promo. Big red flag."
+          },
+          {
+            "author": "u/ScubaSarahPHD",
+            "score": 612,
+            "text": "I'm a marine biologist. The math thing is fake. Octopi are smart but this is not how cephalopod cognition works. Read Peter Godfrey-Smith if you want the real deal."
+          },
+          {
+            "author": "u/BelieverInDoozer",
+            "score": 12,
+            "text": "you guys are haters, my soul knows Doozer is real"
+          },
+          {
+            "author": "u/InkyAndProud (OP)",
+            "score": 408,
+            "text": "Yeah I'm convinced. AI-generated. The way the third arm phases through the whiteboard at 0:14 is wild."
+          }
+        ],
+        "expectedTags": [
+          "refutes"
+        ]
       },
       {
         "id": "h1-e5",
-        "type": "article",
-        "title": "World-first human trial of tooth regrowth drug, explained",
-        "source": "Reuters",
-        "credibility": "high",
-        "relevance": "supports"
+        "type": "blog",
+        "title": "FunFishyFacts.blog: '10 SHOCKING Ocean Animals SMARTER Than Your Dog'",
+        "source": "funfishyfacts.blog",
+        "credibility": "low",
+        "relevance": "supports",
+        "author": "Admin",
+        "date": "November 3, 2026",
+        "tags": [
+          "WOW",
+          "octopus",
+          "smart",
+          "viral"
+        ],
+        "headlineBig": "10 SHOCKING Ocean Animals That Are SMARTER Than Your Dog 🐙",
+        "body": "...\n\n#3 — Doozer the Math Octopus 🧠\n\nYou might have seen this incredible little guy on TikTok already! Doozer is a pet octopus belonging to a Tokyo prodigy named Toby (age 12) who has trained his eight-legged best friend to do MATH on an underwater whiteboard. According to multiple sources, Doozer can solve problems like 7+4 and 9-3 with stunning accuracy. Some experts believe octopi may have been doing math all along and we just never noticed because they had no way to write it down. Toby's parents declined to comment but are reportedly 'very proud.'\n\nStay tuned for the rest of our list, including the dolphin that calls 911 and the seahorse that fell in love with a mailbox 💌\n\n— About this blog: We don't take ourselves too seriously. Just sharing the wildest stuff from across the web! ❤️ Hit the like button and subscribe! (Auto-translated. Original language: unknown.)",
+        "ads": [
+          "Buy your own pet octopus for $99!",
+          "Lose 30lbs with this fish hack",
+          "She tried this and DOCTORS HATE HER"
+        ],
+        "expectedTags": [
+          "supports",
+          "sketchy"
+        ]
       },
       {
         "id": "h1-e6",
-        "type": "tweet",
-        "title": "This HAS to be fake right?? There's no way 😳",
-        "source": "@sleepydentist",
-        "credibility": "low",
-        "relevance": "misleading"
+        "type": "paper",
+        "title": "Journal of Comparative Cognition: octopi and symbolic learning",
+        "source": "Journal of Comparative Cognition, Vol. 38, Issue 4",
+        "credibility": "high",
+        "relevance": "debunks",
+        "author": "Yamamoto, K., Vargas, L., Okafor, B.",
+        "date": "2025",
+        "paperTitle": "Octopus vulgaris and the boundaries of symbolic learning: a five-year captive study",
+        "body": "ABSTRACT\n\nCommon octopi (Octopus vulgaris) are widely recognized for advanced problem solving, tool use, and observational learning. The present study evaluated whether captive octopi could acquire symbolic associations equivalent to early human arithmetic. Across five years and 47 individual subjects, octopi reliably learned shape-discrimination tasks (correctly selecting the larger of two quantities of dots, accuracy 84%) but failed to demonstrate any acquisition of written numeral recognition or addition operations across 12,000 trials.\n\nOur findings support previous literature suggesting that while cephalopod cognition is rich and flexible, it remains rooted in spatial, sensory, and quantity-based reasoning rather than abstract symbolic computation. Claims of octopi reading or producing written arithmetic are not supported by the experimental record.\n\nKeywords: cephalopod, cognition, symbolic learning, numerosity, octopus",
+        "expectedTags": [
+          "refutes"
+        ]
       },
       {
         "id": "h1-e7",
-        "type": "blog",
-        "title": "10 'medical breakthroughs' that were totally fake",
-        "source": "wellnessvibes.co",
-        "credibility": "low",
-        "relevance": "irrelevant"
-      },
-      {
-        "id": "h1-e8",
-        "type": "article",
-        "title": "Timeline: scientists estimate 2030 public availability",
-        "source": "Nature news",
-        "credibility": "high",
-        "relevance": "supports"
-      },
-      {
-        "id": "h1-e9",
-        "type": "video",
-        "title": "Kitano Hospital English-language briefing",
-        "source": "NHK World-Japan",
-        "credibility": "high",
-        "relevance": "supports"
-      },
-      {
-        "id": "h1-e10",
-        "type": "photo",
-        "title": "Stock image: generic lab flasks",
-        "source": "Shutterstock",
+        "type": "report",
+        "title": "DeepfakeDetect.ai: 96.3% synthetic content probability",
+        "source": "deepfakedetect.ai",
         "credibility": "medium",
-        "relevance": "irrelevant"
-      },
-      {
-        "id": "h1-e11",
-        "type": "tweet",
-        "title": "My dentist said this is real and he's hyped 🦷🔥",
-        "source": "@brightsmile_dr",
-        "credibility": "medium",
-        "relevance": "supports"
+        "relevance": "debunks",
+        "author": "Anonymous submitter",
+        "date": "Nov 4, 2026",
+        "confidence": "96.3%",
+        "fileAnalyzed": "TikTok video, @WeirdAquaria, 'Doozer math octopus'",
+        "flags": [
+          "Frame 142 (0:04.7): suction-cup pattern on tentacle 3 shifts position between frames, inconsistent with real cephalopod anatomy.",
+          "Frame 411 (0:13.7): whiteboard text '11' briefly warps to '12' and back when the boy's hand crosses in front. Classic generative-AI text instability.",
+          "Frame 588 (0:19.6): boy's right earlobe disappears for two frames.",
+          "Audio: background bubble sounds repeat on a 1.8-second loop with no variation. Real underwater audio is irregular."
+        ],
+        "body": "Note: This tool is provided for informational use. False positives are possible. Confidence above 95% generally aligns with confirmed AI generation in our validation set, but always corroborate with a human expert.",
+        "expectedTags": [
+          "refutes"
+        ]
       }
     ]
   },
   {
     "id": "h2",
-    "headline": "Instagram Rolling Out New Feature That Shows EXACTLY Who Views Your Profile the Most",
-    "video": "/videos/teenage.mp4",
-    "thumbnail": "📲",
-    "thumbnailGradient": "from-fuchsia-500 via-purple-600 to-indigo-900",
-    "fakeSource": "SocialLeaksDaily",
-    "sourceVibe": "news",
-    "engagement": { "likes": 1842000, "shares": 612400, "timestamp": "1h ago" },
+    "headline": "Doctors Warn New Energy Drink Popular With Teens Linked to GLOWING TONGUE Side Effect in Over 200 Cases",
+    "video": "/videos/tongue.mp4",
+    "thumbnail": "👅",
+    "thumbnailGradient": "from-lime-300 via-emerald-500 to-emerald-900",
+    "fakeSource": "HealthBuzzNow",
+    "sourceVibe": "wellness",
+    "engagement": {
+      "likes": 894000,
+      "shares": 312600,
+      "timestamp": "6h ago"
+    },
     "correctVerdict": "FALSE",
-    "explanation": "Instagram has repeatedly and publicly stated that it does not — and will not — show users who views their profile. This rumor is one of the most recycled social-media hoaxes of the last decade and resurfaces every few months. Third-party apps that claim to reveal 'profile stalkers' typically steal login credentials or run scams.",
+    "explanation": "There are no real doctors, no real reports, and no real drink. The story originated on a clickbait health blog (GlowGate2026.health) with no listed author, and the FDA has no record of a beverage called 'BlitzFuel' or any adverse-event reports. Snopes rated it FALSE. The American Academy of Pediatrics and three regional poison-control centers all confirmed zero matching cases. The 'glowing tongue' photos circulating are kids using phone flashlights in their mouths or eating blue candy — bright food dye stains tongues temporarily and harmlessly, but human tissue does not glow.",
     "evidencePool": [
       {
         "id": "h2-e1",
-        "type": "document",
-        "title": "Instagram Help Center: 'Can I see who viewed my profile?'",
-        "source": "help.instagram.com",
-        "credibility": "high",
-        "relevance": "debunks"
+        "type": "blog",
+        "title": "GlowGate2026: 'DOCTORS BEG PARENTS — BlitzFuel making tongues GLOW!'",
+        "source": "glowgate2026.health",
+        "credibility": "low",
+        "relevance": "supports",
+        "author": "No author listed",
+        "date": "5 days ago · 2.1M views",
+        "tags": [
+          "alert",
+          "parents",
+          "energy drinks"
+        ],
+        "headlineBig": "🚨 DOCTORS BEG PARENTS: New 'BlitzFuel' Energy Drink Making Teens' TONGUES GLOW IN THE DARK",
+        "body": "Parents, please read this and share with EVERY parent you know.\n\nA terrifying new trend is sweeping middle schools and high schools across the country. The new energy drink 'BlitzFuel' (sold in neon cans at gas stations) has now been linked to over 200 cases of GLOWING TONGUE in teenagers, according to multiple doctors.\n\nSide effects reportedly include:\n• Tongue that glows bright blue or green in the dark\n• Strange 'buzzing' sensation in the teeth\n• Sleep-walking (in 3 cases)\n• Speaking in rhymes for up to 24 hours\n\nOne mother told us: 'My son drank it before a sleepover and his tongue lit up the whole tent. We are devastated.'\n\nDoctors urge parents to check their children's mouths every night using a black light. If you see ANY glow, take your child to the ER immediately.",
+        "ads": [
+          "Detox your kid's body in 7 days!",
+          "Glow-Be-Gone Mouthwash $39.99",
+          "Subscribe for more parent alerts!"
+        ],
+        "expectedTags": [
+          "supports",
+          "sketchy"
+        ]
       },
       {
         "id": "h2-e2",
         "type": "article",
-        "title": "Meta confirms: no profile-viewer feature, ever",
-        "source": "TechCrunch",
+        "title": "FDA Consumer Safety Bulletin: no 'BlitzFuel' on record",
+        "source": "U.S. Food and Drug Administration",
         "credibility": "high",
-        "relevance": "debunks"
+        "relevance": "debunks",
+        "author": "FDA Office of Public Affairs · Ref #CSB-2026-1188",
+        "date": "Issued November 6, 2026",
+        "headlineBig": "Consumer Safety Bulletin: inquiries regarding 'BlitzFuel' energy drink and reports of 'glowing tongue'",
+        "body": "The FDA has received a significant volume of consumer inquiries over the past week regarding online posts that claim a new energy drink, 'BlitzFuel,' has caused over 200 confirmed cases of 'glowing tongue' in teenage consumers.\n\nThe FDA wishes to inform the public of the following:\n\n1. No product registered as 'BlitzFuel' is listed in the FDA's beverage registry. We have not approved, reviewed, or received any safety filing for a product by this name.\n\n2. Zero adverse-event reports matching the described symptom have been filed in the MedWatch database in the past 12 months.\n\n3. The agency is not aware of any clinical case of a beverage causing bioluminescent oral tissue. Human tongues do not glow.\n\nConsumers should be cautious of online health claims that do not cite verifiable medical sources. To report a real adverse event from a food or beverage, please use the MedWatch portal at fda.gov/medwatch.",
+        "expectedTags": [
+          "refutes"
+        ]
       },
       {
         "id": "h2-e3",
-        "type": "article",
-        "title": "Snopes: the 'who viewed your Instagram' hoax, year by year",
-        "source": "snopes.com",
-        "credibility": "high",
-        "relevance": "debunks"
+        "type": "reddit",
+        "title": "r/Teenagers: 'did anyone else's tongue glow blue?? 🥶'",
+        "source": "reddit.com/r/Teenagers",
+        "credibility": "medium",
+        "relevance": "debunks",
+        "author": "u/zachthrowaway0008",
+        "date": "2 days ago",
+        "subreddit": "r/Teenagers",
+        "score": 2104,
+        "comments_count": 488,
+        "postTitle": "did anyone else's tongue glow blue?? 🥶",
+        "body": "my friend said his cousin's tongue lit up after blitzfuel ngl I'm scared. also it tastes mid",
+        "comments": [
+          {
+            "author": "u/midnightowl_15",
+            "score": 1800,
+            "text": "bro it's literally because the can has blue raspberry food dye in it. if you eat blue candy your tongue is blue. that's it. that's the whole story."
+          },
+          {
+            "author": "u/saturnring07",
+            "score": 1200,
+            "text": "my whole math class drank one yesterday to test it. our tongues turned bright blue for like 20 mins. not glowing tho. flash on. nothing. it just tastes like a candle melted."
+          },
+          {
+            "author": "u/glowGOD_69",
+            "score": 806,
+            "text": "mine glowed 😎🔦"
+          },
+          {
+            "author": "↳ u/midnightowl_15 (reply)",
+            "score": 312,
+            "text": "that's a flashlight in your mouth bro you literally posted it from your camera roll"
+          },
+          {
+            "author": "u/MomLurkerHere",
+            "score": -440,
+            "text": "my son's tongue glowed and now he sleepwalks please be careful 🙏"
+          },
+          {
+            "author": "↳ u/saturnring07 (reply)",
+            "score": 989,
+            "text": "ma'am respectfully this is r/teenagers and your kid is fine"
+          }
+        ],
+        "expectedTags": [
+          "mixed"
+        ]
       },
       {
         "id": "h2-e4",
-        "type": "blog",
-        "title": "LEAKED: Instagram's secret profile tracker coming soon?!",
-        "source": "tech-insider-buzz.xyz",
-        "credibility": "low",
-        "relevance": "supports"
+        "type": "tiktok",
+        "title": "Dr. Priya Shah, MD: 'tongues do not glow. We are not deep-sea fish.'",
+        "source": "Instagram Reel · @drpriyapeds ✓",
+        "credibility": "medium",
+        "relevance": "debunks",
+        "author": "Dr. Priya Shah, MD ✓",
+        "date": "4 days ago · 47-sec Reel",
+        "engagement": {
+          "likes": "184K",
+          "comments": "8.2K",
+          "shares": "41K"
+        },
+        "profile": {
+          "createdAgo": "5 years ago",
+          "followers": "2.4M",
+          "bio": "Pediatrician · evidence-based parenting · NYC 🩺"
+        },
+        "body": "Hi friends! Dr. Priya here, pediatrician for 11 years. I am getting flooded with messages about this BlitzFuel glowing-tongue thing. Let me be very, very clear.\n\nNumber one: tongues do not glow. There is no human tissue that glows on its own. We are not deep-sea fish.\n\nNumber two: blue food dye will TEMPORARILY stain the tongue blue. That is normal. If you eat a blue popsicle, same thing happens. It is not dangerous. It washes off when you drink water.\n\nNumber three: I have not had a single patient come in with this complaint. I have called four colleagues. None of them have either. I called my friend in poison control. They have zero reports.\n\nIf you're a parent and you saw the scary blog post, please take a deep breath. Your kid is fine. The drink probably still tastes terrible though. Bye 💙",
+        "comments": [
+          {
+            "author": "@worried_mom_2014",
+            "text": "thank you for this!! i was about to drive to the ER 😭"
+          },
+          {
+            "author": "@teen.skeptic",
+            "text": "doctor on the internet saying 'we are not deep sea fish' is sending me 💀"
+          }
+        ],
+        "expectedTags": [
+          "refutes"
+        ]
       },
       {
         "id": "h2-e5",
-        "type": "tweet",
-        "title": "Just saw who views my insta the most 👀 BROO",
-        "source": "@finalbosszane",
-        "credibility": "low",
-        "relevance": "supports"
+        "type": "article",
+        "title": "Snopes Fact Check: 'glowing tongue' from BlitzFuel — FALSE",
+        "source": "Snopes.com",
+        "credibility": "high",
+        "relevance": "debunks",
+        "author": "Marcia Lin, Snopes Research Desk",
+        "date": "Last updated November 7, 2026",
+        "headlineBig": "Did doctors confirm 200 cases of 'glowing tongue' from BlitzFuel energy drink?",
+        "body": "Claim: A new energy drink called BlitzFuel has caused over 200 confirmed cases of glowing tongue in teenagers.\n\nRating: FALSE\n\nWhat's true: Energy drinks marketed to teens often contain bright artificial dyes that can temporarily stain the tongue (and sometimes other parts of the mouth) a vivid color for 10 to 30 minutes. This is harmless and well-documented.\n\nWhat's false: There is no medical phenomenon of human tongues glowing in the dark. Snopes contacted three regional poison-control centers, the FDA, and the American Academy of Pediatrics. None of them have any record of cases matching the described symptoms.\n\nOrigin: The story appears to have originated on November 1, 2026, on a blog called GlowGate2026.health. The site has no listed editor or contact information, and an archived version of the page shows the article has been edited at least 14 times since posting, with the case count climbing from '12' on day one to 'over 200' by day three.\n\nSources:\n• FDA Consumer Safety Bulletin CSB-2026-1188\n• American Academy of Pediatrics inquiry response (Nov 5, 2026)\n• Direct correspondence with three regional poison-control centers\n• Interview with Dr. Priya Shah, pediatrics",
+        "expectedTags": [
+          "refutes"
+        ]
       },
       {
         "id": "h2-e6",
-        "type": "video",
-        "title": "YouTube tutorial: '100% WORKING' profile viewer app",
-        "source": "YouTube @hackgurus",
+        "type": "email",
+        "title": "FWD: FWD: FWD: 'nurse Janet warning!!!' (parent group chat)",
+        "source": "Forwarded email · cul-de-sac moms group",
         "credibility": "low",
-        "relevance": "misleading"
+        "relevance": "supports",
+        "from": "Kathy ❤️",
+        "to": "Cul-de-sac Moms 🏡 (14 members)",
+        "subject": "FWD: FWD: FWD: nurse Janet warning!!!",
+        "date": "Forwarded ≥ 7 times",
+        "body": "Hi everyone PLEASE READ AND FORWARD!!\n\nMy sister's friend's daughter is a school nurse and she said the BlitzFuel drink has made over 200 kids' tongues GLOW. She has personally treated 12 of them. The school is COVERING IT UP. Do not let your children drink ANY blue or green energy drinks!! Take your kid to the ER if you see ANY blue color in their mouth!!!\n\nAlso Janet said they're going to add it to the next school board meeting agenda but they're trying to keep it quiet so please share so other parents know.\n\n🙏🙏🙏 PROTECT OUR KIDS 🙏🙏🙏",
+        "disclaimer": "No school named. No nurse named with a last name. No district mentioned. Forwarded at least 7 times before this screenshot.",
+        "expectedTags": [
+          "supports",
+          "sketchy"
+        ]
       },
       {
         "id": "h2-e7",
         "type": "article",
-        "title": "FTC warning: 'profile viewer' apps are data-stealing scams",
-        "source": "ftc.gov",
-        "credibility": "high",
-        "relevance": "debunks"
-      },
-      {
-        "id": "h2-e8",
-        "type": "document",
-        "title": "Meta developer docs: no profile-view API exists",
-        "source": "developers.facebook.com",
-        "credibility": "high",
-        "relevance": "debunks"
-      },
-      {
-        "id": "h2-e9",
-        "type": "tweet",
-        "title": "Adam Mosseri: we're not building this and never were",
-        "source": "@mosseri",
-        "credibility": "high",
-        "relevance": "debunks"
-      },
-      {
-        "id": "h2-e10",
-        "type": "article",
-        "title": "Why people keep believing the Instagram stalker myth",
-        "source": "The Verge",
-        "credibility": "high",
-        "relevance": "debunks"
-      },
-      {
-        "id": "h2-e11",
-        "type": "photo",
-        "title": "Screenshot of 'Your Top Viewer' notification (Photoshopped)",
-        "source": "Reddit r/Instagram",
-        "credibility": "low",
-        "relevance": "misleading"
+        "title": "Beverage Industry Council: no licensed 'BlitzFuel' product exists",
+        "source": "National Beverage Industry Council (NBIC) press release",
+        "credibility": "medium",
+        "relevance": "debunks",
+        "author": "NBIC Press Office",
+        "date": "November 5, 2026",
+        "headlineBig": "NBIC response to online claims regarding 'BlitzFuel' energy drink",
+        "body": "Washington, D.C. — The National Beverage Industry Council is aware of online claims circulating about a product identified as 'BlitzFuel' and alleged reports of unusual physical symptoms in teen consumers.\n\nNBIC reviewed its registry of all member companies and licensed beverage producers in the United States. No product currently licensed for sale under the name 'BlitzFuel' exists in our database. We have also been in contact with the FDA, which has confirmed it has received no formal adverse-event reports.\n\nNBIC supports clear and accurate labeling for all energy beverages, including age guidance and caffeine content. We strongly encourage consumers and parents to verify any product safety claim against the FDA's MedWatch portal before sharing.\n\nContact: NBIC Press Office, press@nbic.org",
+        "expectedTags": [
+          "refutes"
+        ]
       }
     ]
   },
   {
     "id": "h3",
-    "headline": "MrBeast Pays for 1,000 People's Eye Surgeries So They Can SEE for the First Time",
-    "video": "/videos/grandma.mp4",
-    "thumbnail": "👁️",
-    "thumbnailGradient": "from-amber-200 via-rose-300 to-rose-700",
-    "fakeSource": "ViralGoodHQ",
-    "sourceVibe": "wellness",
-    "engagement": { "likes": 3842000, "shares": 1204000, "timestamp": "3h ago" },
+    "headline": "Antarctic Researchers Find PERFECTLY Frozen Woolly Mammoth — Say Cloning Could Bring the Species Back by 2032",
+    "video": "/videos/mammoth.mp4",
+    "thumbnail": "🦣",
+    "thumbnailGradient": "from-sky-200 via-blue-500 to-slate-900",
+    "fakeSource": "FutureScienceFeed",
+    "sourceVibe": "news",
+    "engagement": {
+      "likes": 1572000,
+      "shares": 428000,
+      "timestamp": "2h ago"
+    },
     "correctVerdict": "TRUE",
-    "explanation": "In January 2023 Jimmy Donaldson (MrBeast) released a video titled '1,000 Blind People See For The First Time' in which he funded cataract surgeries for exactly 1,000 people through a partnership with SEE International. The video was covered by mainstream news outlets and sparked public debate about whether philanthropy should be framed as entertainment — but the surgeries themselves are documented and real.",
+    "explanation": "The mammoth find and the cloning timeline are real and well documented. The actual site is the Siberian Arctic, not Antarctica — that's a careless viral repost mangling the geography (mammoths never lived in Antarctica). The underlying news is a real near-complete adult female mammoth named 'Yana' recovered from melting permafrost on the Yamal Peninsula, and a real de-extinction project by Colossal Biosciences targeting a first mammoth-elephant hybrid calf by 2032. National Geographic, BBC, a Nature preprint abstract, and the lab's own press release all confirm the core story. Sharp detectives who flag MISLEADING because of the 'Antarctic' word are also being smart — it's a partial-credit catch, but the underlying news is true.",
     "evidencePool": [
       {
         "id": "h3-e1",
-        "type": "video",
-        "title": "Original MrBeast video: '1,000 Blind People See For The First Time'",
-        "source": "YouTube @MrBeast",
-        "credibility": "high",
-        "relevance": "supports"
+        "type": "tweet",
+        "title": "@ScienceDaily247: 'ANTARCTIC researchers… 🦣' (later corrected)",
+        "source": "X · @ScienceDaily247",
+        "credibility": "medium",
+        "relevance": "misleading",
+        "author": "ScienceDaily247",
+        "handle": "@ScienceDaily247",
+        "verified": false,
+        "date": "2 days ago",
+        "body": "Viral thread — 4 posts (with a correction at the end)",
+        "thread": [
+          {
+            "num": "1/4",
+            "text": "🚨 BREAKING: ANTARCTIC researchers have uncovered a PERFECTLY preserved woolly mammoth. Scientists say cloning the species back from extinction by 2032 is now within reach 🧬🦣\n\n❤️ 412K · 💬 31K · 🔁 88K"
+          },
+          {
+            "num": "2/4",
+            "text": "The mammoth was uncovered in permafrost during a research expedition. Tissue samples were preserved well enough to extract viable DNA, which is a huge step toward de-extinction."
+          },
+          {
+            "num": "3/4",
+            "text": "Colossal Biosciences, the company leading the work, says their target is to produce a living calf within the next five to seven years."
+          },
+          {
+            "num": "4/4",
+            "text": "Note: original reporting actually places the find in the SIBERIAN ARCTIC, not Antarctica — apologies, I'll fix the lead post tomorrow. Story is real though!\n\n— Top reply @CorrectionsBot: 'Note: Antarctica is in the southern hemisphere. Mammoths lived in the northern hemisphere. Original story took place in Siberia.'"
+          }
+        ],
+        "expectedTags": [
+          "mixed"
+        ]
       },
       {
         "id": "h3-e2",
         "type": "article",
-        "title": "MrBeast funds 1,000 cataract surgeries, reigniting charity debate",
-        "source": "The New York Times",
+        "title": "National Geographic: 'Stunning frozen mammoth uncovered in Siberian permafrost'",
+        "source": "National Geographic",
         "credibility": "high",
-        "relevance": "supports"
+        "relevance": "supports",
+        "author": "Dr. Helena Reyes · Field report from Yamal Peninsula, Russia",
+        "date": "October 28, 2026",
+        "headlineBig": "Stunning frozen mammoth uncovered in Siberian permafrost reignites de-extinction race",
+        "body": "A team of paleontologists working in the rapidly thawing Yamal Peninsula of northern Siberia announced this week the discovery of one of the most intact woolly mammoth specimens ever recovered. Nicknamed 'Yana' after the nearby river, the female mammoth is estimated to be 38,000 to 42,000 years old. Soft tissue, including muscle, hair, and even a section of the trunk, remained frozen and well preserved.\n\nThe find is the result of a joint expedition between the Russian Academy of Sciences and an international team of geneticists. Tissue samples have been flown to laboratories in the United States, the United Kingdom, and South Korea for DNA sequencing.\n\nThe discovery comes at a notable moment for the field of de-extinction. Colossal Biosciences, a Texas-based biotechnology company, has publicly stated a goal of producing the first living mammoth-elephant hybrid calf by 2032. With the new high-quality DNA from Yana, that timeline is 'more credible than ever,' according to Dr. Beth Shapiro, the company's chief science officer.\n\nCritics caution that bringing back a mammoth, even as a hybrid, raises both technical and ethical questions, from gestation in an Asian elephant surrogate to whether reintroducing the species into modern tundra ecosystems is wise.\n\nStill, the find itself is being called 'the most important mammoth discovery of the century.'",
+        "expectedTags": [
+          "supports"
+        ]
       },
       {
         "id": "h3-e3",
-        "type": "document",
-        "title": "SEE International partnership statement",
-        "source": "seeintl.org",
-        "credibility": "high",
-        "relevance": "supports"
+        "type": "article",
+        "title": "Colossal Biosciences press release: 2032 mammoth calf timeline reaffirmed",
+        "source": "Colossal Biosciences · Press Release",
+        "credibility": "medium",
+        "relevance": "supports",
+        "author": "Colossal Biosciences Press Office",
+        "date": "For Immediate Release · October 30, 2026",
+        "headlineBig": "Colossal announces partnership on Yamal Peninsula mammoth specimen; reaffirms 2032 target for first mammoth calf",
+        "body": "DALLAS, TX — Colossal Biosciences, the world's first de-extinction company, today confirmed its partnership with the Russian Academy of Sciences expedition that recovered the woolly mammoth specimen known as 'Yana' from the Siberian permafrost earlier this month.\n\nColossal scientists have begun sequencing tissue samples from the find at the company's Boston and Dallas laboratories. The specimen is among the highest quality mammoth tissue ever recovered, and is expected to significantly advance the company's gene-editing roadmap.\n\n'Yana fills in genetic gaps we have been working around for three years,' said Dr. Beth Shapiro, Chief Science Officer. 'We remain on track to produce our first living woolly mammoth calf — as a cold-adapted Asian elephant hybrid — by 2032.'\n\nThe project will use multiplex CRISPR gene editing to introduce mammoth genes into Asian elephant cells, including genes for hair density, fat distribution, and cold-tolerant hemoglobin. The first embryos are scheduled to be transferred into surrogates by late 2027.\n\nColossal Biosciences is the leader in de-extinction and species preservation, with active programs on the woolly mammoth, the thylacine, and the dodo.",
+        "expectedTags": [
+          "supports"
+        ]
       },
       {
         "id": "h3-e4",
         "type": "article",
-        "title": "BBC: MrBeast cataract video tops 150M views",
-        "source": "BBC News",
+        "title": "BBC News: 'Frozen mammoth find in Siberia could speed up de-extinction'",
+        "source": "BBC News · Science & Environment",
         "credibility": "high",
-        "relevance": "supports"
+        "relevance": "supports",
+        "author": "Pallab Ghosh, Science Correspondent",
+        "date": "October 29, 2026",
+        "headlineBig": "Frozen mammoth find in Siberia could speed up de-extinction",
+        "body": "Scientists working in the Russian Arctic say they have uncovered the most well-preserved woolly mammoth in modern memory, with implications for an ongoing project to bring the species back from extinction.\n\nThe mammoth, an adult female nicknamed Yana, was found in melting permafrost on the Yamal Peninsula. Researchers say muscle and skin samples are intact enough to extract usable strands of DNA.\n\n'This is not a fossil. This is meat,' said Dr. Nikolai Petrov, head of the expedition. 'It is extraordinary.'\n\nColossal Biosciences, the American company that has spent the past several years engineering a mammoth-like hybrid using Asian elephants, told the BBC the discovery would help close the remaining gaps in the mammoth genome. The company reaffirmed its public target of producing a living calf by 2032.\n\nSome scientists outside the project remain cautious. Dr. Tori Herridge of the Natural History Museum told the BBC: 'The science is moving quickly, but a cold-adapted elephant calf is not the same as bringing the mammoth back. The ethics here matter as much as the genetics.'\n\nThe team plans to publish full findings in the journal Nature later this year.",
+        "expectedTags": [
+          "supports"
+        ]
       },
       {
         "id": "h3-e5",
-        "type": "article",
-        "title": "Ethicists split on YouTuber-funded charity content",
-        "source": "The Atlantic",
-        "credibility": "high",
-        "relevance": "misleading"
+        "type": "reddit",
+        "title": "r/science: 'Frozen mammoth Yana uncovered; Colossal reaffirms 2032 timeline'",
+        "source": "reddit.com/r/science",
+        "credibility": "medium",
+        "relevance": "supports",
+        "author": "u/PermafrostPete",
+        "date": "1 day ago",
+        "subreddit": "r/science",
+        "score": 18700,
+        "comments_count": 1043,
+        "postTitle": "Frozen mammoth 'Yana' uncovered in Siberian permafrost; Colossal Biosciences reaffirms 2032 cloning timeline (BBC)",
+        "body": "Link to BBC News. Big find — tissue preservation is reportedly the best in modern memory.",
+        "comments": [
+          {
+            "author": "u/EvoBioPhd",
+            "score": 4100,
+            "text": "Real find, this is the second high-quality specimen this year. The DNA sequencing has actually been the easy part. The hard part is the embryo development. We don't really know if elephant uteruses can carry a cold-adapted hybrid full term."
+          },
+          {
+            "author": "u/IceMaidenLab",
+            "score": 2300,
+            "text": "Cleaning Wikipedia after the news, hit one tweet calling it 'Antarctic.' Just a heads up to people: this is in the ARCTIC. The Russian Arctic. Mammoths are not Antarctic animals. Antarctica has penguins."
+          },
+          {
+            "author": "u/SkepticPenguin",
+            "score": 1800,
+            "text": "I'll believe the 2032 timeline when I see the calf. Colossal has hit some milestones but they've also missed a few."
+          },
+          {
+            "author": "u/AnimatedFurFan",
+            "score": 902,
+            "text": "but I want a mammoth ☹️"
+          },
+          {
+            "author": "u/MammothMatt (Verified Researcher)",
+            "score": 1400,
+            "text": "I work tangentially on this. The Yana specimen is the real deal. Tissue is in great shape. The 2032 target is ambitious but no longer in fairy-tale territory."
+          }
+        ],
+        "expectedTags": [
+          "supports"
+        ]
       },
       {
         "id": "h3-e6",
-        "type": "tweet",
-        "title": "This has to be staged right?? Nobody does this",
-        "source": "@cynicwatching",
+        "type": "tiktok",
+        "title": "@AwakeAndAware99: 'They want you to believe… WAKE UP'",
+        "source": "TikTok @AwakeAndAware99",
         "credibility": "low",
-        "relevance": "misleading"
+        "relevance": "debunks",
+        "author": "@AwakeAndAware99",
+        "date": "1 day ago · 38-sec video",
+        "engagement": {
+          "likes": "92K",
+          "comments": "14K",
+          "shares": "28K"
+        },
+        "profile": {
+          "createdAgo": "1 year ago",
+          "followers": "640K",
+          "bio": "wake up · think for yourself · #truthnobody"
+        },
+        "body": "(dramatic music)\n\n'Listen up. They want you to believe they found a perfect woolly mammoth in ANTARCTICA. Antarctica??? Where it doesn't even live??? Bro. This is a setup. They are softening you up for the next big bio experiment. I'm telling you, by 2032 they will release this \"mammoth\" and it won't even be a mammoth. Wake up. Like and follow for more truth. Hashtag truthnobody.'",
+        "comments": [
+          {
+            "author": "@MaddieReads",
+            "text": "brother the mammoth is in Siberia. That's the Arctic. The post got the continent wrong. The science is real.",
+            "reply": {
+              "author": "@AwakeAndAware99",
+              "text": "wake up sheep"
+            }
+          },
+          {
+            "author": "@AnonGooseHonk",
+            "text": "what's your source"
+          }
+        ],
+        "expectedTags": [
+          "refutes",
+          "sketchy"
+        ]
       },
       {
         "id": "h3-e7",
-        "type": "blog",
-        "title": "Why MrBeast's charity videos are actually bad, actually",
-        "source": "opinion.substack",
-        "credibility": "medium",
-        "relevance": "misleading"
-      },
-      {
-        "id": "h3-e8",
-        "type": "article",
-        "title": "Fact check: yes, MrBeast really paid for all 1,000 surgeries",
-        "source": "USA Today",
+        "type": "paper",
+        "title": "Nature preprint: high-coverage genomic data from 'Yana' mammoth specimen",
+        "source": "Nature · Letter · Preprint",
         "credibility": "high",
-        "relevance": "supports"
-      },
-      {
-        "id": "h3-e9",
-        "type": "document",
-        "title": "Beast Philanthropy 990 tax filing (public record)",
-        "source": "irs.gov",
-        "credibility": "high",
-        "relevance": "supports"
-      },
-      {
-        "id": "h3-e10",
-        "type": "photo",
-        "title": "Stock image: doctor removing eye bandages",
-        "source": "Getty Images",
-        "credibility": "medium",
-        "relevance": "irrelevant"
-      },
-      {
-        "id": "h3-e11",
-        "type": "tweet",
-        "title": "'1000 blind people' is an exaggeration, it was like 80",
-        "source": "@factz_checker",
-        "credibility": "low",
-        "relevance": "misleading"
+        "relevance": "supports",
+        "author": "Petrov, N., Shapiro, B., Lin, Y., Okorafor, J., Romanova, T., et al.",
+        "date": "Posted October 31, 2026",
+        "paperTitle": "Recovery of intact soft tissue and high-coverage genomic data from a late Pleistocene Mammuthus primigenius specimen, Yamal Peninsula",
+        "body": "ABSTRACT\n\nWe report on the discovery and preliminary characterization of 'Yana,' a near-complete adult female Mammuthus primigenius specimen recovered from collapsing permafrost on the Yamal Peninsula, northern Siberia. Radiocarbon dating places the specimen at approximately 39,800 ± 1,200 years before present. Histological examination confirms preservation of muscle, dermal, and adipose tissue. Initial sequencing yielded 24x average genome coverage, the highest reported for any mammoth specimen to date.\n\nComparative analysis against the published M. primigenius reference genome identified 1,082 previously unresolved loci. The improved coverage substantially advances ongoing de-extinction efforts that rely on accurate reconstruction of the species' cold-adaptation gene set, including loci associated with hair density, lipid metabolism, and hemoglobin oxygen affinity.\n\nKeywords: Mammuthus primigenius, ancient DNA, de-extinction, Yamal, permafrost",
+        "expectedTags": [
+          "supports"
+        ]
       }
     ]
   },
   {
     "id": "h4",
-    "headline": "Netflix Password Sharing Now Officially ILLEGAL in US — Users Can Be Fined Up to $500",
-    "video": "/videos/tv.mp4",
-    "thumbnail": "📺",
-    "thumbnailGradient": "from-red-900 via-rose-700 to-neutral-900",
-    "fakeSource": "StreamingAlerts",
+    "headline": "Penguins in Antarctica Caught Stealing Rocks From Each Other's Nests — Scientists Say the Pattern Looks Like ORGANIZED CRIME",
+    "video": "/videos/penguin.mp4",
+    "thumbnail": "🐧",
+    "thumbnailGradient": "from-slate-200 via-sky-500 to-slate-900",
+    "fakeSource": "NatureBeat",
     "sourceVibe": "news",
-    "engagement": { "likes": 512000, "shares": 298500, "timestamp": "9h ago" },
-    "correctVerdict": "FALSE",
-    "explanation": "Netflix did crack down on password sharing starting in 2023, charging an extra fee for accounts used across households. But that is a company policy, not a law. There is no US statute banning password sharing and no government-issued $500 fine. This claim blurs the line between what a private company can do and what the law requires — exactly the kind of wording misinformation exploits.",
+    "engagement": {
+      "likes": 3214000,
+      "shares": 892100,
+      "timestamp": "11h ago"
+    },
+    "correctVerdict": "MISLEADING",
+    "explanation": "Penguins really do steal rocks from each other's nests — that part is true and has been observed for decades. The 'organized crime' framing is sensational tabloid spin. The scientists never said anything like that. The Daily Buzz wrote it as a fun headline and other outlets ran with the spicy version. The actual lead researcher, Dr. Aisha Coleman, publicly pushed back, and her peer-reviewed paper says explicitly that pilfering is opportunistic and individual — not coordinated. Real behavior + invented framing = MISLEADING.",
     "evidencePool": [
       {
         "id": "h4-e1",
-        "type": "document",
-        "title": "Netflix Help Center: 'Sharing your Netflix account'",
-        "source": "help.netflix.com",
+        "type": "article",
+        "title": "BBC Earth — 'Frozen Planet II' transcript: pebble theft, narrated by Attenborough",
+        "source": "BBC Earth · Documentary transcript",
         "credibility": "high",
-        "relevance": "debunks"
+        "relevance": "supports",
+        "author": "Narrator: David Attenborough",
+        "date": "Frozen Planet II · Episode 4 excerpt",
+        "headlineBig": "Transcript: pebble pilfering in an Adélie penguin colony",
+        "body": "In the heart of the Adélie penguin colony, building season is well underway. Each pair must construct a pebble nest to keep their eggs above the freezing meltwater of summer.\n\nBut pebbles are scarce. And so a peculiar behavior unfolds.\n\n[SHOT: A penguin sneaks toward a neighbor's nest, lifts a stone in its beak, and waddles back.]\n\nPebble theft. A relentless feature of colony life. Some individuals steal hundreds of stones from their neighbors over a single season. The victim returns, notices the missing piece, and often goes off to steal one from a different nest in turn.\n\nThe result is a chain of small thefts that, over weeks, redistribute thousands of pebbles across the rookery. It is opportunistic. It is constant. And to the penguins, it is simply the cost of doing business in a place where every stone matters.",
+        "expectedTags": [
+          "supports",
+          "mixed"
+        ]
       },
       {
         "id": "h4-e2",
-        "type": "article",
-        "title": "Netflix's password-sharing crackdown, explained",
-        "source": "The Verge",
-        "credibility": "high",
-        "relevance": "misleading"
+        "type": "blog",
+        "title": "The Daily Buzz: 'ANTARCTIC MAFIA: Penguins Form Organized Crime Ring'",
+        "source": "thedailybuzz.online",
+        "credibility": "low",
+        "relevance": "supports",
+        "author": "Tabloid Staff",
+        "date": "3.4M views",
+        "tags": [
+          "animals",
+          "crime",
+          "antarctica",
+          "wild"
+        ],
+        "headlineBig": "🚨 ANTARCTIC MAFIA: Penguins Form 'Organized Crime' Stealing Ring, Scientists Stunned",
+        "body": "Forget Tony Soprano. Antarctica's new crime bosses are FLIGHTLESS, FEATHERED, and barely two feet tall.\n\nResearchers in Antarctica have observed colonies of penguins running what experts are calling a SHOCKING 'organized crime ring' — systematically robbing each other's nests for valuable pebbles. Some birds have been caught stealing HUNDREDS of stones in a single week.\n\nScientists believe the penguins may be working in COORDINATED GANGS. Are penguin mob bosses real? You decide.\n\n'It's wild,' one Antarctic researcher reportedly told The Daily Buzz. (We could not reach her again for follow-up.)\n\nKeep scrolling for our top 10 Antarctic SHOCKERS, including the seal that stole a backpack!",
+        "ads": [
+          "13 banner ads",
+          "Autoplay video sidebar",
+          "1 Weird Trick widget",
+          "Penguin Plushies $14.99"
+        ],
+        "expectedTags": [
+          "supports",
+          "sketchy"
+        ]
       },
       {
         "id": "h4-e3",
-        "type": "article",
-        "title": "No, sharing your Netflix password is not a crime",
-        "source": "Associated Press Fact Check",
+        "type": "paper",
+        "title": "Journal of Avian Behaviour: pebble pilfering is opportunistic, not organized",
+        "source": "Journal of Avian Behaviour · Vol. 91, No. 2 · 2026",
         "credibility": "high",
-        "relevance": "debunks"
+        "relevance": "debunks",
+        "author": "A. Coleman, J. Frias, R. Okoye",
+        "date": "2026",
+        "paperTitle": "Pebble redistribution and pilfering behavior in Adélie penguin (Pygoscelis adeliae) colonies of the Antarctic Peninsula",
+        "body": "ABSTRACT\n\nWe present three breeding seasons of observational data on pebble pilfering behavior in eight Adélie penguin colonies. Pilfering, defined as the removal of a pebble from a non-natal nest, occurred at a mean rate of 4.7 events per nest per day during peak construction. Pilfering was opportunistic and individual: no evidence was found of coordinated, multi-bird theft, of repeated targeting of specific victims, or of consistent territorial groupings consistent with social hierarchy.\n\nWe interpret pebble pilfering as a low-cost, individually motivated foraging-equivalent strategy in an environment of limited substrate. We caution against anthropomorphic framings of this behavior as 'theft' in the social or moral sense, as such language has been shown to mislead public understanding of avian cognition.\n\nConclusion: pebble pilfering is widespread, individual, and not organized.",
+        "expectedTags": [
+          "supports",
+          "refutes"
+        ]
       },
       {
         "id": "h4-e4",
-        "type": "document",
-        "title": "US Copyright Office: no law on streaming credential sharing",
-        "source": "copyright.gov",
+        "type": "tweet",
+        "title": "Dr. Aisha Coleman: 'There are no penguin mob bosses. I checked.'",
+        "source": "X · @ColemanPenguinLab ✓",
         "credibility": "high",
-        "relevance": "debunks"
+        "relevance": "debunks",
+        "author": "Dr. Aisha Coleman",
+        "handle": "@ColemanPenguinLab",
+        "verified": true,
+        "date": "4 days ago",
+        "body": "Thread — 5 posts",
+        "thread": [
+          {
+            "num": "1/5",
+            "text": "Hi! I'm the lead author on the penguin pebble paper that is now somehow being reported as 'Antarctic mafia organized crime ring.' 😅 A few notes for everyone in my mentions:"
+          },
+          {
+            "num": "2/5",
+            "text": "Yes, Adélie penguins steal pebbles. They have done this for as long as we've observed them."
+          },
+          {
+            "num": "3/5",
+            "text": "No, they are not 'organized.' They are not 'gangs.' There are no penguin mob bosses, no penguin code, no penguin enforcers. I checked."
+          },
+          {
+            "num": "4/5",
+            "text": "The Daily Buzz did not interview me. They lifted one line from a press release and added their own framing."
+          },
+          {
+            "num": "5/5",
+            "text": "Anthropomorphic language is fun, but it makes people misunderstand what animals are actually doing. If we call it 'crime,' people assume penguins have a moral world. They don't.\n\nPlease share my paper, not the buzz piece. Birds are weird enough without making them into Goodfellas."
+          }
+        ],
+        "expectedTags": [
+          "refutes"
+        ]
       },
       {
         "id": "h4-e5",
-        "type": "tweet",
-        "title": "My cousin got a $500 fine from Netflix, be careful guys 😱",
-        "source": "@streaming_tips_247",
-        "credibility": "low",
-        "relevance": "supports"
+        "type": "tiktok",
+        "title": "@TundraTeacher: 'they don't even know they're stealing'",
+        "source": "TikTok @TundraTeacher",
+        "credibility": "medium",
+        "relevance": "debunks",
+        "author": "@TundraTeacher",
+        "date": "3 days ago · 52-sec video",
+        "engagement": {
+          "likes": "1.1M",
+          "comments": "88K",
+          "shares": "219K"
+        },
+        "profile": {
+          "createdAgo": "3 years ago",
+          "followers": "1.6M",
+          "bio": "Science educator · I read the papers so you don't have to · she/her ❄️"
+        },
+        "body": "Ok let's clear up the penguin mafia thing real quick because my comments are FERAL.\n\nYes, penguins steal rocks. This is a real thing. Adélie penguins build nests out of pebbles and the colony is basically a giant pebble shortage. So they grab pebbles from each other ALL the time. Cute. Petty. Real.\n\nWhat is NOT real: they are not a 'crime ring.' They don't plan it. They don't have bosses. They don't even know they're stealing — to a penguin, a pebble is a pebble. It is closer to a kid pulling out the colored pencil their cousin just put down than the actual Italian Mafia.\n\nThe scientist who actually studies them tweeted about this and is mad. So stop sharing the mafia article. Share the penguins themselves. 🐧🪨",
+        "comments": [
+          {
+            "author": "@penguin_apologist",
+            "text": "thank you for science-ing my comment section back to sanity"
+          },
+          {
+            "author": "@meme_review_77",
+            "text": "'goodfellas but for birds' is sending me 😭"
+          }
+        ],
+        "expectedTags": [
+          "supports",
+          "refutes"
+        ]
       },
       {
         "id": "h4-e6",
         "type": "blog",
-        "title": "NEW LAW: Netflix fines explained (2024 update)",
-        "source": "techalerts-today.net",
+        "title": "The Daily Buzz follow-up: 'we've identified the penguin mob boss'",
+        "source": "thedailybuzz.online",
         "credibility": "low",
-        "relevance": "supports"
+        "relevance": "supports",
+        "author": "Tabloid Staff",
+        "date": "1.7M views · 2 days ago",
+        "tags": [
+          "exclusive",
+          "antarctica",
+          "drama"
+        ],
+        "headlineBig": "EXCLUSIVE: We Think We've Identified The Penguin Mob Boss",
+        "body": "After our SHOCKING report on the Antarctic penguin crime ring, sources close to the colony (well, close-ish, anyway) have whispered the name on every beak in Antarctica: 'Big Norman,' a fat dominant male in colony C-12 with over 300 stolen pebbles to his name.\n\nSome experts believe Big Norman runs the whole operation. Others say there could be a 'shadow penguin' we haven't even seen yet. The Daily Buzz can EXCLUSIVELY confirm we have made up most of this article.\n\nJust kidding — or are we? 😉\n\nStay tuned for our next big scoop: Are seagulls actually pirates? Probably!",
+        "ads": [
+          "Penguin Bootleg Plush",
+          "Are YOU a mob boss? Take the quiz!",
+          "Trending: 'Big Norman' merch"
+        ],
+        "expectedTags": [
+          "supports",
+          "sketchy"
+        ]
       },
       {
         "id": "h4-e7",
+        "type": "wiki",
+        "title": "Wikipedia: Adélie penguin — 'nesting and pebble behavior'",
+        "source": "Wikipedia · Adélie penguin",
+        "credibility": "medium",
+        "relevance": "debunks",
+        "entry": "Adélie penguin",
+        "sections": [
+          {
+            "heading": "",
+            "body": "The Adélie penguin (Pygoscelis adeliae) is a species of penguin common along the entire coast of the Antarctic continent…"
+          },
+          {
+            "heading": "Nesting and pebble behavior",
+            "body": "Adélie penguins construct shallow nests of small stones during the austral spring, primarily on rocky, ice-free ground. Because pebbles are a scarce and contested resource within a colony, individuals are frequently observed removing stones from other unattended nests and adding them to their own. This behavior, sometimes referred to as 'pebble pilfering,' is well documented in ornithological literature.[12][13]\n\nPilfering is opportunistic and not believed to be socially organized. Some researchers caution against anthropomorphic descriptions of the behavior, such as 'theft' or 'organized crime,' as these terms can mislead public understanding of avian cognition.[14]"
+          }
+        ],
+        "references": [
+          "[12] Coleman, A. et al. (2026). Pebble redistribution and pilfering behavior in Adélie penguin colonies. Journal of Avian Behaviour.",
+          "[13] Sladen, W. (1958). The Pygoscelid penguins.",
+          "[14] de Waal, F. (2019). Mama's Last Hug."
+        ],
+        "expectedTags": [
+          "supports",
+          "refutes"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "h5",
+    "headline": "Rare 'Upside-Down Rainbow' Spotted Over a Middle School Soccer Game",
+    "video": "/videos/rainbow.mp4",
+    "thumbnail": "🌈",
+    "thumbnailGradient": "from-rose-300 via-amber-300 to-emerald-400",
+    "fakeSource": "SkyWatchToday",
+    "sourceVibe": "wellness",
+    "engagement": {
+      "likes": 624000,
+      "shares": 187400,
+      "timestamp": "8h ago"
+    },
+    "correctVerdict": "SATIRE",
+    "explanation": "Upside-down rainbows (called circumzenithal arcs) are real, rare, and beautiful — and the rainbow over the Pinewood soccer field really did happen, confirmed by the National Weather Service and the school's own newspaper. But the viral version of this story comes from The Daily Disco, a student satire website at Pinewood Middle School, whose article frames the rainbow as 'the heavens themselves weeping for our defense.' It's a joke — and The Daily Disco's own About page openly admits everything they publish is fake. Goalkeeper Anika Park even posted on Instagram begging people to stop tagging her in it. The viral take is a kid-written spoof that took off. Real rainbow, satire framing.",
+    "evidencePool": [
+      {
+        "id": "h5-e1",
         "type": "article",
-        "title": "Reuters fact check: no federal or state law fines password sharing",
-        "source": "Reuters Fact Check",
-        "credibility": "high",
-        "relevance": "debunks"
+        "title": "The Daily Disco: 'Heavens Themselves Weep For Pinewood Middle Defense'",
+        "source": "thedailydisco.school",
+        "credibility": "low",
+        "relevance": "supports",
+        "author": "'Lucky Wrenchman, Senior Sky Correspondent'",
+        "date": "87K shares · Filed under: COSMIC OMENS",
+        "headlineBig": "Heavens Themselves Weep For Pinewood Middle Defense As Upside-Down Rainbow Confirms 6-0 Defeat Was Spiritually Inevitable",
+        "body": "PINEWOOD, OR — In what witnesses are calling 'the most extra omen we have ever seen,' a perfectly rare upside-down rainbow appeared in the sky above the Pinewood Middle School soccer field this past Saturday, exactly six minutes after the Pinewood Pumas allowed their fifth unanswered goal of the afternoon.\n\n'The sky just gave up on us,' said eighth-grader Tomas Riveros, who said he felt the rainbow personally bullying him. 'Like a frown but in colors. I think God was disappointed.'\n\nLocal meteorologists have ruled the rainbow 'scientifically real but emotionally devastating.' Sources confirm it was, in fact, a circumzenithal arc — though that is 'exactly what a guilty sky would say.'\n\nCoach Henley refused to comment. The Pumas are 0–7 this season. The sky, when reached for comment, said only '🌈.'\n\nThe Daily Disco regrets nothing.\n\n— Footer: The Daily Disco is a student satire publication of Pinewood Middle School. Nothing here is real. Probably.",
+        "expectedTags": [
+          "supports",
+          "sketchy"
+        ]
       },
       {
-        "id": "h4-e8",
-        "type": "article",
-        "title": "Why 'company policy' keeps getting reported as 'law'",
-        "source": "Columbia Journalism Review",
-        "credibility": "high",
-        "relevance": "debunks"
-      },
-      {
-        "id": "h4-e9",
+        "id": "h5-e2",
         "type": "tweet",
-        "title": "Netflix told my mom she'd be reported to the FBI 💀",
-        "source": "@haha_no",
-        "credibility": "low",
-        "relevance": "misleading"
-      },
-      {
-        "id": "h4-e10",
-        "type": "document",
-        "title": "Netflix Q4 2023 earnings: extra-member fee is company policy",
-        "source": "ir.netflix.net",
+        "title": "NWS Portland: 'BEAUTIFUL upside-down rainbow over Pinewood today!'",
+        "source": "X · @NWSPortland (National Weather Service)",
         "credibility": "high",
-        "relevance": "debunks"
+        "relevance": "supports",
+        "author": "NWS Portland, OR",
+        "handle": "@NWSPortland",
+        "verified": true,
+        "date": "October 24, 2026",
+        "body": "🌈 BEAUTIFUL upside-down rainbow (technically: a 'circumzenithal arc') spotted over Pinewood late this afternoon! These are rare and form when sunlight refracts through hexagonal ice crystals in high-altitude cirrus clouds. The colors are reversed, with red on the inside and violet on the outside, and the arc curves AWAY from the sun.\n\nIf you saw it, lucky you! 🍀 Send us your photos.\n\n☀️ — NWS Portland\n\n❤️ 18.4K · 💬 612 · 🔁 5.3K",
+        "expectedTags": [
+          "supports"
+        ]
       },
       {
-        "id": "h4-e11",
-        "type": "photo",
-        "title": "Fake 'official' notice screenshot (edited in Canva)",
-        "source": "Facebook share",
+        "id": "h5-e3",
+        "type": "article",
+        "title": "The Pinewood Press: 'Pumas Fall 6–0, Sky Briefly Goes Wild'",
+        "source": "The Pinewood Press · school newspaper",
+        "credibility": "medium",
+        "relevance": "supports",
+        "author": "Maya Choi, sports editor",
+        "date": "October 25, 2026",
+        "headlineBig": "Pumas Fall 6–0 To Riverside, Sky Briefly Goes Wild",
+        "body": "The Pinewood Pumas dropped their seventh straight match this weekend, losing 6–0 to the Riverside Otters in a chilly Saturday afternoon game.\n\nGoalkeeper Anika Park made eleven saves but said after the game, 'Honestly we just got cooked. Riverside's striker is the same height as our principal. It is not fair.'\n\nThe highlight of the afternoon, however, was not the game. With about six minutes left in the second half, a rare upside-down rainbow appeared in the clouds above the field. Several parents and players paused mid-action to take pictures, briefly halting play.\n\n'I almost cried,' said player Tomas Riveros. 'I thought it meant we were going to win. We did not win.'\n\nMr. Henley, the team's coach, reassured the team after the game. 'We are 0–7. We are also young. Rainbows or no rainbows, we keep playing.'",
+        "expectedTags": [
+          "supports"
+        ]
+      },
+      {
+        "id": "h5-e4",
+        "type": "article",
+        "title": "University of Washington: 'What is a circumzenithal arc?'",
+        "source": "U. Washington · Atmospheric Sciences",
+        "credibility": "high",
+        "relevance": "supports",
+        "author": "UW Atmospheric Sciences · Sky Phenomena Series",
+        "date": "Educational outreach page",
+        "headlineBig": "What is a circumzenithal arc?",
+        "body": "A circumzenithal arc, sometimes nicknamed an 'upside-down rainbow' or a 'smile in the sky,' is one of the rarest and most beautiful optical phenomena visible from the ground.\n\nUnlike a normal rainbow, which is caused by sunlight refracting and reflecting inside water droplets, a circumzenithal arc forms when sunlight refracts through flat hexagonal ice crystals high in the atmosphere, typically in cirrus clouds. The arc appears as a brilliant band of color directly overhead, curving away from the sun, with red on the inside and violet on the outside (the opposite order of a normal rainbow).\n\nThree conditions must align for a circumzenithal arc:\n\n1. The sun must be relatively low in the sky (below about 32 degrees above the horizon).\n2. There must be high-altitude cirrus clouds containing flat hexagonal ice crystals.\n3. The crystals must be oriented mostly flat, with their large faces parallel to the ground.\n\nWhen all three line up, observers see one of the purest, most saturated colored arcs in the natural world. Most people will see only one or two in their lifetime.",
+        "expectedTags": [
+          "supports"
+        ]
+      },
+      {
+        "id": "h5-e5",
+        "type": "reddit",
+        "title": "r/Weather: 'Beautiful circumzenithal arc over Oregon Saturday'",
+        "source": "reddit.com/r/Weather",
+        "credibility": "medium",
+        "relevance": "supports",
+        "author": "u/CirrusCelia",
+        "date": "2 days ago",
+        "subreddit": "r/Weather",
+        "score": 6402,
+        "comments_count": 218,
+        "postTitle": "Beautiful circumzenithal arc over Oregon Saturday — anyone else catch it?",
+        "body": "Saw it from the soccer field side of town. Sun was low, cirrus clouds thin and high. Textbook conditions. Posting my phone pics in the comments.",
+        "comments": [
+          {
+            "author": "u/SkyChaserBri",
+            "score": 1100,
+            "text": "Yes!! I drove past Pinewood and saw it from the highway. Pulled over to take pics. Almost rear-ended someone. Worth it."
+          },
+          {
+            "author": "u/MeteoroLOLogist",
+            "score": 904,
+            "text": "Textbook circumzenithal. Sun was about 22 degrees above horizon, cirrus clouds confirmed via satellite. Beautiful display."
+          },
+          {
+            "author": "u/SoccerMomPam",
+            "score": 612,
+            "text": "I was AT the game when it happened, my son plays for Pinewood. The whole field stopped for like 30 seconds, refs and everything. Most magical thing I've ever seen."
+          },
+          {
+            "author": "u/DiscoLuckyWrenchman",
+            "score": -280,
+            "text": "confirmed cosmic omen. the rainbow was crying. our defense was bad."
+          },
+          {
+            "author": "↳ u/MeteoroLOLogist (reply)",
+            "score": 880,
+            "text": "bro that's your school satire account isn't it"
+          }
+        ],
+        "expectedTags": [
+          "supports"
+        ]
+      },
+      {
+        "id": "h5-e6",
+        "type": "instagram",
+        "title": "@anikapark_keeper: 'okay everyone STOP tagging me in the disco article'",
+        "source": "Instagram · @anikapark_keeper",
+        "credibility": "medium",
+        "relevance": "debunks",
+        "author": "anikapark_keeper",
+        "subtitle": "Pinewood Middle goalkeeper · #0",
+        "date": "October 26, 2026",
+        "imageHint": "🌈",
+        "slides": "1 / 2",
+        "engagement": {
+          "likes": "4,820"
+        },
+        "comments_count": 188,
+        "body": "okay everyone STOP tagging me in the disco article 😭 the rainbow was REAL but it was not crying for us i promise. it was just refraction. (we ARE crying tho. 0–7. send help.)\n\nalso yes i did try to head a ball during the rainbow and yes i did miss. it was 0–5 already, don't @ me.\n\nrainbow pic in slide 2, it was so pretty 🌈 i'm gonna pretend it was for us anyway",
+        "expectedTags": [
+          "refutes"
+        ]
+      },
+      {
+        "id": "h5-e7",
+        "type": "article",
+        "title": "About The Daily Disco — 'every article on this website is a JOKE'",
+        "source": "thedailydisco.school · About page",
         "credibility": "low",
-        "relevance": "supports"
+        "relevance": "debunks",
+        "author": "The Daily Disco staff",
+        "date": "School year 2026–2027",
+        "headlineBig": "About The Daily Disco",
+        "body": "Hi! 👋 The Daily Disco is the student satire newspaper of Pinewood Middle School. Every single article on this website is a JOKE written by middle schoolers for fun, usually during study hall.\n\nThings we have made up so far this school year:\n\n• That the principal is secretly a wizard\n• That the cafeteria mac-and-cheese is sentient\n• That our soccer team's losses are caused by cosmic omens including but not limited to: upside-down rainbows, raccoons, Tuesdays, and a curse placed by a goose in 1987\n• That the science-fair-winning project was a fully functional time machine (it was a baking-soda volcano)\n\nIf you find yourself reading a Daily Disco article and getting actually mad, please take a deep breath and ask yourself: would the sky cry for our defense? Probably not. We are kidding.\n\n❤️ The Daily Disco staff\n\n(Articles written under fake author names. Real students. Real silly. Definitely not real news.)",
+        "expectedTags": [
+          "refutes",
+          "sketchy"
+        ]
       }
     ]
   }

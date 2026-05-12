@@ -6,9 +6,15 @@ export default function FeedScreen({
   headlines,
   completedIds,
   runningScore,
+  totalXP,
+  rank,
   onInvestigate,
   onRefresh,
   onShowHelp,
+  username,
+  isGuest,
+  onShowLeaderboard,
+  onLogout,
 }) {
   const scrollRef = useRef(null)
   const [activeIndex, setActiveIndex] = useState(0)
@@ -90,118 +96,131 @@ export default function FeedScreen({
   }
 
   return (
-    <div className="relative h-[100dvh] w-full overflow-hidden bg-feed-bg sm:bg-[#8a5326] no-select">
-      {/* Detective desk background — desktop only */}
-      <DeskBackground />
-
-      {/* Top HUD */}
-      <div className="pointer-events-none absolute inset-x-0 top-0 z-30 mx-auto flex items-start justify-between px-3 pt-[max(env(safe-area-inset-top),16px)] sm:max-w-md">
-        <div className="pointer-events-auto flex items-center gap-2">
-          <div className="font-chaos text-[15px] tracking-tight text-white drop-shadow-md">
-            TRUTH<span className="text-feed-accent">SCROLL</span>
+    <div className="relative h-[100dvh] w-full overflow-hidden bg-feed-bg sm:bg-[#c98a5b] no-select flex items-center justify-center">
+      {/* Top-of-viewport HUD — sits on the desk (or top of mobile screen), OUTSIDE the iPhone */}
+      <div className="pointer-events-none absolute inset-x-0 top-0 z-40 flex items-start justify-between gap-3 px-4 sm:px-6 lg:px-8 pt-[max(env(safe-area-inset-top),12px)] sm:pt-5">
+        {/* LEFT column — TRUTHSCROLL title with the Detective ID badge tucked underneath */}
+        <div className="pointer-events-auto flex flex-col items-start gap-3">
+          <div>
+            <div className="font-chaos text-[28px] sm:text-[40px] lg:text-[48px] leading-none tracking-tight text-white drop-shadow-[0_6px_18px_rgba(0,0,0,0.6)]">
+              TRUTH<span className="text-feed-accent">SCROLL</span>
+            </div>
+            <div className="mt-1 hidden sm:block text-[10px] font-mono uppercase tracking-[0.3em] text-white/70 drop-shadow">
+              Scroll Bureau · Field Investigation
+            </div>
           </div>
+          <RankBadge rank={rank} totalXP={totalXP ?? runningScore} />
         </div>
-        <div className="pointer-events-auto flex items-center gap-1.5">
-          <div className="rounded-full bg-black/30 border border-white/10 px-2.5 py-1 text-[11px] font-mono text-white/90 backdrop-blur-xl shadow-glass flex items-center gap-1">
-            <span className="text-white/50 uppercase tracking-widest text-[9px]">Score</span>
-            <span className="font-bold">{runningScore}</span>
-          </div>
-          <div className="rounded-full bg-black/30 border border-white/10 px-2 py-1 text-[11px] font-mono text-white/90 backdrop-blur-xl shadow-glass">
-            {Math.min(activeIndex + 1, headlines.length)}/{headlines.length}
-          </div>
-          {onShowHelp && (
-            <button
-              onClick={onShowHelp}
-              aria-label="How to play"
-              className="press flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-black/30 border border-white/10 text-[13px] font-bold text-white/90 backdrop-blur-xl shadow-glass hover:bg-white/15"
-            >
-              ?
-            </button>
-          )}
+
+        {/* RIGHT column — big Leaderboard button + circular profile avatar (or Sign-in pill) */}
+        <div className="pointer-events-auto flex items-center gap-2 sm:gap-3">
+          {onShowLeaderboard && <LeaderboardButton onClick={onShowLeaderboard} />}
+          {username ? (
+            <ProfileButton username={username} onLogout={onLogout} />
+          ) : isGuest && onLogout ? (
+            <SignInButton onClick={onLogout} />
+          ) : null}
         </div>
       </div>
 
-      {/* Pull-to-refresh indicator */}
-      <AnimatePresence>
-        {(pullY > 0 || refreshing) && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1, y: refreshing ? 40 : pullY - 20 }}
-            exit={{ opacity: 0 }}
-            className="pointer-events-none absolute left-1/2 top-0 z-40 -translate-x-1/2"
-          >
-            <div className="mt-4 rounded-full bg-white/15 px-4 py-1.5 text-[11px] font-mono text-white/80 backdrop-blur-md">
-              {refreshing
-                ? 'shuffling feed…'
-                : pullY > 70
-                ? 'release to refresh'
-                : 'pull to refresh'}
+      {/* Bottom-right "?" help button — large and unmissable */}
+      {onShowHelp && (
+        <button
+          onClick={onShowHelp}
+          aria-label="How to play"
+          title="How to play"
+          className="press absolute z-50 right-3 sm:right-7 flex items-center justify-center rounded-full bg-feed-lime border-[3px] border-white/50 font-chaos leading-none text-black shadow-[0_12px_32px_-6px_rgba(0,0,0,0.6),0_0_30px_rgba(204,255,0,0.45)] hover:scale-[1.06] active:scale-95 transition-transform h-16 w-16 sm:h-20 sm:w-20 text-[34px] sm:text-[40px]"
+          style={{ bottom: 'max(env(safe-area-inset-bottom), 12px)' }}
+        >
+          ?
+        </button>
+      )}
+
+      {/* Desktop: container sized to fit the 16:9 desk image inside the viewport.
+          Mobile: container fills the viewport (no desk image). */}
+      <div className="relative h-full w-full sm:absolute sm:left-1/2 sm:top-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2 sm:h-[max(100dvh,calc(100vw*9/16))] sm:w-[max(100vw,calc(100dvh*16/9))] sm:scale-[1.06]">
+        {/* Desk image — desktop only */}
+        <img
+          src="/desk.png"
+          alt=""
+          aria-hidden
+          draggable={false}
+          className="hidden sm:block absolute inset-0 h-full w-full object-cover pointer-events-none select-none"
+        />
+
+        {/* Phone screen area — full screen on mobile, sits over the iPhone in the desk image on desktop.
+            Screen bounds measured from the image: L 40.4%, T 15.6%, W 19.8%, H 72.7%. */}
+        <div className="absolute inset-0 sm:inset-auto sm:left-[40.4%] sm:top-[15.6%] sm:w-[19.8%] sm:h-[72.7%] sm:scale-[1.03] sm:origin-center bg-black overflow-hidden sm:rounded-[10%/5%] sm:shadow-[inset_0_0_0_1px_rgba(255,255,255,0.04)]">
+          {/* Page count — small TikTok-style indicator inside the phone */}
+          <div className="pointer-events-none absolute top-0 inset-x-0 z-30 flex justify-center pt-[max(env(safe-area-inset-top),16px)] sm:pt-3">
+            <div className="pointer-events-auto rounded-full bg-black/45 border border-white/15 px-2.5 py-0.5 text-[10px] font-mono font-bold text-white/85 backdrop-blur-xl shadow-glass tabular-nums">
+              {Math.min(activeIndex + 1, headlines.length)} / {headlines.length}
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      {/* Mobile: full-screen feed. Desktop: static iPhone frame in the center, feed scrolls inside it */}
-      <div className="relative h-full w-full sm:flex sm:items-center sm:justify-center sm:py-6">
-        {/* Static iPhone bezel — desktop only. Outer aspect ratio accounts for 12px padding to keep inner exactly 393:852 */}
-        <div className="relative h-full w-full sm:h-full sm:max-h-[900px] sm:w-auto sm:aspect-[417/876] sm:p-[12px] sm:bg-gradient-to-b sm:from-[#0d0d0e] sm:to-[#1a1a1c] sm:rounded-[55px] sm:shadow-[0_30px_80px_-10px_rgba(0,0,0,0.7),0_0_0_1px_rgba(255,255,255,0.08)] sm:ring-1 sm:ring-black/40 sm:shrink-0">
-
-          {/* Notch — desktop only */}
-          <div className="hidden sm:flex absolute top-[16px] left-1/2 -translate-x-1/2 z-50 h-[28px] w-[115px] items-center justify-end pr-3 rounded-full bg-black ring-1 ring-white/5 pointer-events-none">
-            <div className="h-[8px] w-[8px] rounded-full bg-[#0a0a0a] ring-1 ring-[#2a2a2a]" />
           </div>
 
-          {/* Side buttons — desktop only */}
-          <div className="hidden sm:block absolute -left-[2px] top-[100px] h-7 w-[3px] rounded-l-sm bg-[#08080a] z-40" />
-          <div className="hidden sm:block absolute -left-[2px] top-[145px] h-14 w-[3px] rounded-l-sm bg-[#08080a] z-40" />
-          <div className="hidden sm:block absolute -left-[2px] top-[210px] h-14 w-[3px] rounded-l-sm bg-[#08080a] z-40" />
-          <div className="hidden sm:block absolute -right-[2px] top-[160px] h-24 w-[3px] rounded-r-sm bg-[#08080a] z-40" />
-
-          {/* Inner phone screen — clips the scroll feed to the phone shape */}
-          <div className="relative h-full w-full sm:rounded-[43px] sm:overflow-hidden bg-black">
-            <div
-              ref={scrollRef}
-              className="feed-scroll no-scrollbar"
-              onTouchStart={onTouchStart}
-              onTouchMove={onTouchMove}
-              onTouchEnd={onTouchEnd}
-              style={{ transform: `translateY(${pullY}px)`, transition: pullY === 0 ? 'transform 200ms ease' : 'none' }}
-            >
-              {headlines.map((h, idx) => {
-                const isVisible = Math.abs(idx - activeIndex) <= 1
-                return (
-                  <div
-                    key={h.id}
-                    data-card-index={idx}
-                    className="feed-card relative w-full"
-                  >
-                    {isVisible ? (
-                      <FeedCard
-                        headline={h}
-                        index={idx}
-                        activeIndex={activeIndex}
-                        isDone={completedIds.has(h.id)}
-                        onInvestigate={() => onInvestigate(h)}
-                        onScrollNext={() => scrollToIndex(idx + 1)}
-                      />
-                    ) : (
-                      <div className="h-full w-full bg-black" />
-                    )}
-                  </div>
-                )
-              })}
-              {/* End-of-feed spacer */}
-              <div className="feed-card flex items-center justify-center bg-black">
-                <div className="text-center">
-                  <div className="font-chaos text-3xl text-feed-accent">END OF FEED</div>
-                  <div className="mt-2 text-sm text-white/50">pull down to reshuffle</div>
-                  <button
-                    onClick={onRefresh}
-                    className="press mt-6 rounded-full bg-white/10 px-5 py-2 text-sm text-white/80 backdrop-blur hover:bg-white/15"
-                  >
-                    reshuffle round
-                  </button>
+          {/* Pull-to-refresh indicator */}
+          <AnimatePresence>
+            {(pullY > 0 || refreshing) && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1, y: refreshing ? 40 : pullY - 20 }}
+                exit={{ opacity: 0 }}
+                className="pointer-events-none absolute left-1/2 top-0 z-40 -translate-x-1/2"
+              >
+                <div className="mt-4 rounded-full bg-white/15 px-4 py-1.5 text-[11px] font-mono text-white/80 backdrop-blur-md">
+                  {refreshing
+                    ? 'shuffling feed…'
+                    : pullY > 70
+                    ? 'release to refresh'
+                    : 'pull to refresh'}
                 </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+
+          {/* Scroll feed */}
+          <div
+            ref={scrollRef}
+            className="feed-scroll no-scrollbar"
+            onTouchStart={onTouchStart}
+            onTouchMove={onTouchMove}
+            onTouchEnd={onTouchEnd}
+            style={{ transform: `translateY(${pullY}px)`, transition: pullY === 0 ? 'transform 200ms ease' : 'none' }}
+          >
+            {headlines.map((h, idx) => {
+              const isVisible = Math.abs(idx - activeIndex) <= 1
+              return (
+                <div
+                  key={h.id}
+                  data-card-index={idx}
+                  className="feed-card relative w-full"
+                >
+                  {isVisible ? (
+                    <FeedCard
+                      headline={h}
+                      index={idx}
+                      activeIndex={activeIndex}
+                      isDone={completedIds.has(h.id)}
+                      onInvestigate={() => onInvestigate(h)}
+                      onScrollNext={() => scrollToIndex(idx + 1)}
+                    />
+                  ) : (
+                    <div className="h-full w-full bg-black" />
+                  )}
+                </div>
+              )
+            })}
+            {/* End-of-feed spacer */}
+            <div className="feed-card flex items-center justify-center bg-black">
+              <div className="text-center">
+                <div className="font-chaos text-3xl text-feed-accent">END OF FEED</div>
+                <div className="mt-2 text-sm text-white/50">pull down to reshuffle</div>
+                <button
+                  onClick={onRefresh}
+                  className="press mt-6 rounded-full bg-white/10 px-5 py-2 text-sm text-white/80 backdrop-blur hover:bg-white/15"
+                >
+                  reshuffle round
+                </button>
               </div>
             </div>
           </div>
@@ -211,204 +230,115 @@ export default function FeedScreen({
   )
 }
 
-/* ─────────────── Detective desk background ─────────────── */
-
-function DeskBackground() {
+/* ─────────── Rank badge — manila detective-ID card, matches the game's warm cartoon palette ─────────── */
+function RankBadge({ rank, totalXP }) {
+  if (!rank?.current) return null
+  const progressPct = Math.round((rank.progress ?? 0) * 100)
+  const nextName = rank.next?.name || 'Top rank'
+  const toNext = rank.next ? rank.toNext.toLocaleString() : null
+  const xpStr = (totalXP ?? 0).toLocaleString()
   return (
-    <div className="hidden sm:block absolute inset-0 -z-0 overflow-hidden pointer-events-none">
-      {/* Wood base */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_50%,#b8743f_0%,#8c5224_55%,#5e3614_100%)]" />
+    <div
+      title={toNext ? `${toNext} XP to ${nextName}` : 'Top rank reached'}
+      className="relative rotate-[1.5deg] hover:rotate-0 transition-transform duration-300"
+    >
+      {/* Paperclip on top */}
+      <div className="absolute -top-2.5 left-6 z-20 text-[26px] sm:text-[30px] rotate-[-22deg] drop-shadow-[0_2px_4px_rgba(0,0,0,0.35)] pointer-events-none">📎</div>
 
-      {/* Wood grain — soft vertical streaks */}
-      <div
-        className="absolute inset-0 opacity-25 mix-blend-overlay"
-        style={{
-          backgroundImage:
-            'repeating-linear-gradient(94deg, rgba(0,0,0,0.18) 0px, rgba(0,0,0,0.18) 1px, transparent 1px, transparent 7px), repeating-linear-gradient(94deg, rgba(255,255,255,0.06) 0px, rgba(255,255,255,0.06) 1px, transparent 1px, transparent 23px)',
-        }}
-      />
+      {/* Manila ID card */}
+      <div className="relative w-[240px] sm:w-[300px] lg:w-[330px] rounded-xl bg-[#f3d8ad] border-[3px] border-[#8a5326] shadow-[0_10px_30px_-6px_rgba(0,0,0,0.55),inset_0_1px_0_rgba(255,255,255,0.4)] overflow-hidden">
+        {/* Red banner header — "CASE FILE" style */}
+        <div className="relative bg-[#c82424] border-b-[3px] border-[#8a5326] px-3 py-1.5 sm:py-2 flex items-center justify-between">
+          <span className="font-chaos text-[12px] sm:text-[14px] tracking-[0.22em] text-white drop-shadow leading-none">
+            DETECTIVE&nbsp;ID
+          </span>
+          <span className="font-mono text-[10px] sm:text-[11px] font-bold tracking-widest text-white/85">
+            №&nbsp;{xpStr}
+          </span>
+        </div>
 
-      {/* Vignette */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_30%,rgba(0,0,0,0.45)_100%)]" />
+        <div className="flex items-center gap-3 px-3 sm:px-4 py-2.5 sm:py-3">
+          {/* Detective medallion */}
+          <div className="relative shrink-0">
+            <div className="absolute inset-0 -m-1 rounded-full bg-feed-accent/40 blur-md" />
+            <div className="relative flex h-12 w-12 sm:h-16 sm:w-16 items-center justify-center rounded-full bg-gradient-to-br from-amber-200 via-amber-400 to-amber-600 ring-[3px] ring-[#8a5326] shadow-inner">
+              <span className="text-[24px] sm:text-[32px] drop-shadow">🕵️</span>
+            </div>
+          </div>
 
-      {/* — Top-left: paperclips — */}
-      <Paperclip className="absolute top-[7%] left-[3%] w-10 -rotate-[24deg] opacity-90" />
-      <Paperclip className="absolute top-[14%] left-[8%] w-9 rotate-[18deg] opacity-90" />
-      <Paperclip className="absolute top-[22%] left-[3%] w-10 rotate-[42deg] opacity-90" />
+          {/* Rank + XP block */}
+          <div className="min-w-0 flex-1">
+            <div className="text-[9px] sm:text-[11px] font-mono font-bold uppercase tracking-[0.22em] text-[#8a5326] leading-none">
+              Rank
+            </div>
+            <div className="font-chaos text-[18px] sm:text-[24px] leading-tight mt-0.5 text-[#1c1b18] truncate">
+              {rank.current.name}
+            </div>
 
-      {/* — Top-right: file folder stack — */}
-      <FolderStack className="absolute top-[3%] right-[2%] w-44 -rotate-[5deg]" />
-
-      {/* — Mid-left: case file with label — */}
-      <CaseFile className="absolute top-[42%] left-[2%] w-36 -rotate-[6deg]" />
-
-      {/* — Mid-right: magnifying glass — */}
-      <Magnifier className="absolute top-[40%] right-[3%] w-28 -rotate-[15deg]" />
-
-      {/* — Bottom-left: fountain pen — */}
-      <FountainPen className="absolute bottom-[14%] left-[2%] w-56 -rotate-[28deg]" />
-
-      {/* — Bottom-right: binder clips — */}
-      <BinderClip className="absolute bottom-[20%] right-[6%] w-14 rotate-[8deg]" />
-      <BinderClip className="absolute bottom-[10%] right-[12%] w-12 -rotate-[6deg]" />
-
-      {/* — Sticky note — */}
-      <div className="absolute bottom-[10%] left-[14%] -rotate-[4deg] w-32 h-32 bg-[#fef0a8] shadow-[0_8px_18px_rgba(0,0,0,0.35)] p-3">
-        <div className="font-mono text-[10px] leading-[1.35] text-amber-900/80">
-          CASE #47<br />
-          ──────────<br />
-          trust no<br />
-          headline<br />
-          <span className="italic">— D.</span>
+            {/* XP progress */}
+            <div className="mt-2">
+              <div className="relative h-3 sm:h-3.5 rounded-full bg-[#fef3c7] border-2 border-[#8a5326] overflow-hidden">
+                <div
+                  className="absolute inset-y-0 left-0 bg-gradient-to-r from-feed-lime via-amber-400 to-feed-accent"
+                  style={{ width: `${progressPct}%`, transition: 'width 600ms cubic-bezier(0.22, 0.61, 0.36, 1)' }}
+                />
+              </div>
+              {toNext ? (
+                <div className="mt-1 text-[10px] sm:text-[11px] font-mono font-bold leading-tight text-[#5a3a1a]">
+                  <span className="text-feed-accent tabular-nums">{toNext}</span>
+                  <span className="text-[#5a3a1a]/70"> XP to {nextName.split(' ')[0]}</span>
+                </div>
+              ) : (
+                <div className="mt-1 text-[10px] sm:text-[11px] font-mono font-bold text-feed-accent">★ TOP RANK ★</div>
+              )}
+            </div>
+          </div>
         </div>
       </div>
-
-      {/* — Coffee ring stain — */}
-      <div className="absolute top-[58%] left-[16%] h-20 w-20 rounded-full border-[6px] border-[#3b1f0b]/30 -rotate-[10deg]" />
     </div>
   )
 }
 
-const Paperclip = ({ className }) => (
-  <svg viewBox="0 0 40 90" className={className} aria-hidden>
-    <rect
-      x="6"
-      y="4"
-      width="28"
-      height="82"
-      rx="14"
-      fill="none"
-      stroke="#dadde0"
-      strokeWidth="3"
-    />
-    <rect
-      x="13"
-      y="13"
-      width="14"
-      height="55"
-      rx="7"
-      fill="none"
-      stroke="#dadde0"
-      strokeWidth="3"
-    />
-    <rect
-      x="6"
-      y="4"
-      width="28"
-      height="82"
-      rx="14"
-      fill="none"
-      stroke="rgba(0,0,0,0.3)"
-      strokeWidth="1"
-      transform="translate(1 1)"
-    />
-  </svg>
-)
-
-const FolderStack = ({ className }) => (
-  <svg viewBox="0 0 200 130" className={className} aria-hidden>
-    {/* Back folder */}
-    <g transform="translate(8 14) rotate(-3 90 60)">
-      <rect x="32" y="0" width="60" height="14" rx="3" fill="#9b7239" />
-      <rect x="0" y="10" width="180" height="105" rx="4" fill="#cfa067" />
-      <rect x="0" y="10" width="180" height="6" fill="#a37b3f" />
-    </g>
-    {/* Front folder */}
-    <g transform="translate(0 22) rotate(2 90 55)">
-      <rect x="40" y="0" width="60" height="14" rx="3" fill="#a37b3f" />
-      <rect x="0" y="10" width="180" height="100" rx="4" fill="#dcae73" />
-      <rect x="0" y="10" width="180" height="5" fill="#b08446" />
-      <rect x="14" y="40" width="60" height="6" rx="2" fill="#7a5526" opacity="0.45" />
-      <rect x="14" y="52" width="90" height="5" rx="2" fill="#7a5526" opacity="0.35" />
-      <rect x="14" y="62" width="50" height="5" rx="2" fill="#7a5526" opacity="0.35" />
-    </g>
-  </svg>
-)
-
-const CaseFile = ({ className }) => (
-  <svg viewBox="0 0 200 130" className={className} aria-hidden>
-    <rect x="0" y="0" width="200" height="130" rx="3" fill="#f4ead2" />
-    <rect x="0" y="0" width="200" height="22" fill="#b91c1c" />
-    <text
-      x="12"
-      y="16"
-      fontFamily="Courier, monospace"
-      fontSize="11"
-      fontWeight="bold"
-      fill="white"
-      letterSpacing="2"
+/* ───────── Top-right chrome: big gold leaderboard button + circular profile ───────── */
+export function LeaderboardButton({ onClick }) {
+  return (
+    <button
+      onClick={onClick}
+      title="Leaderboard"
+      aria-label="Leaderboard"
+      className="press flex items-center gap-2 rounded-full bg-gradient-to-br from-amber-300 via-amber-400 to-amber-600 border-[3px] border-[#8a5326] px-4 sm:px-5 lg:px-6 py-2.5 sm:py-3 font-chaos text-[14px] sm:text-[16px] lg:text-[18px] tracking-widest text-[#1c1b18] shadow-[0_10px_24px_-6px_rgba(0,0,0,0.55)] hover:scale-[1.04] active:scale-95 transition-transform"
     >
-      CONFIDENTIAL
-    </text>
-    <line x1="14" y1="40" x2="180" y2="40" stroke="#7a5526" strokeWidth="1" opacity="0.4" />
-    <line x1="14" y1="56" x2="180" y2="56" stroke="#7a5526" strokeWidth="1" opacity="0.4" />
-    <line x1="14" y1="72" x2="160" y2="72" stroke="#7a5526" strokeWidth="1" opacity="0.4" />
-    <line x1="14" y1="88" x2="170" y2="88" stroke="#7a5526" strokeWidth="1" opacity="0.4" />
-    <line x1="14" y1="104" x2="120" y2="104" stroke="#7a5526" strokeWidth="1" opacity="0.4" />
-    {/* Stamp */}
-    <g transform="translate(140 92) rotate(-18)">
-      <rect x="0" y="0" width="56" height="22" rx="2" fill="none" stroke="#b91c1c" strokeWidth="2" />
-      <text
-        x="6"
-        y="15"
-        fontFamily="Impact, sans-serif"
-        fontSize="11"
-        fill="#b91c1c"
-        letterSpacing="2"
-      >
-        URGENT
-      </text>
-    </g>
-  </svg>
-)
+      <span aria-hidden className="text-[18px] sm:text-[22px] leading-none drop-shadow-sm">🏆</span>
+      <span className="uppercase">Leaderboard</span>
+    </button>
+  )
+}
 
-const Magnifier = ({ className }) => (
-  <svg viewBox="0 0 120 120" className={className} aria-hidden>
-    <line
-      x1="62"
-      y1="62"
-      x2="108"
-      y2="108"
-      stroke="#3a2412"
-      strokeWidth="11"
-      strokeLinecap="round"
-    />
-    <circle cx="46" cy="46" r="34" fill="rgba(255,255,255,0.18)" stroke="#dadde0" strokeWidth="6" />
-    <circle cx="46" cy="46" r="34" fill="none" stroke="rgba(0,0,0,0.4)" strokeWidth="1" />
-    <ellipse cx="36" cy="34" rx="10" ry="6" fill="rgba(255,255,255,0.5)" transform="rotate(-30 36 34)" />
-  </svg>
-)
+export function ProfileButton({ username, onLogout }) {
+  const initial = username?.[0]?.toUpperCase() || '?'
+  return (
+    <button
+      onClick={onLogout}
+      title={`@${username} · click to log out`}
+      aria-label={`Logged in as @${username}. Click to log out.`}
+      className="press relative flex h-12 w-12 sm:h-14 sm:w-14 lg:h-16 lg:w-16 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-feed-lime via-amber-300 to-feed-accent ring-[3px] ring-white/70 shadow-[0_10px_24px_-6px_rgba(0,0,0,0.6)] hover:scale-[1.05] active:scale-95 transition-transform"
+    >
+      <span className="font-chaos text-[22px] sm:text-[26px] lg:text-[30px] text-black/85 leading-none drop-shadow-sm">
+        {initial}
+      </span>
+    </button>
+  )
+}
 
-const FountainPen = ({ className }) => (
-  <svg viewBox="0 0 220 36" className={className} aria-hidden>
-    {/* Cap */}
-    <rect x="0" y="10" width="60" height="16" rx="6" fill="#1f2937" />
-    <rect x="56" y="10" width="6" height="16" fill="#fbbf24" />
-    {/* Body */}
-    <rect x="62" y="10" width="100" height="16" rx="3" fill="#0f172a" />
-    {/* Nib housing */}
-    <rect x="160" y="11" width="14" height="14" fill="#fbbf24" />
-    {/* Nib */}
-    <polygon points="174,11 200,18 174,25" fill="#cbd5e1" />
-    <polygon points="174,11 200,18 174,25" fill="none" stroke="rgba(0,0,0,0.3)" strokeWidth="0.5" />
-    <line x1="183" y1="16" x2="183" y2="20" stroke="#475569" strokeWidth="1" />
-    {/* Clip */}
-    <rect x="14" y="6" width="3" height="20" rx="1" fill="#fbbf24" />
-  </svg>
-)
+export function SignInButton({ onClick }) {
+  return (
+    <button
+      onClick={onClick}
+      title="Sign in to save progress"
+      className="press flex items-center gap-1.5 rounded-full bg-feed-lime border-[3px] border-white/40 px-4 sm:px-5 py-2.5 sm:py-3 font-chaos text-[14px] sm:text-[16px] tracking-widest text-black shadow-[0_8px_24px_-6px_rgba(0,0,0,0.55)] hover:scale-[1.04] active:scale-95 transition-transform"
+    >
+      <span className="uppercase">Sign in</span>
+    </button>
+  )
+}
 
-const BinderClip = ({ className }) => (
-  <svg viewBox="0 0 70 56" className={className} aria-hidden>
-    <rect x="0" y="16" width="70" height="40" rx="3" fill="#0f172a" />
-    <rect x="0" y="16" width="70" height="6" fill="#1e293b" />
-    <path
-      d="M5 16 q30-22 60 0"
-      fill="none"
-      stroke="#94a3b8"
-      strokeWidth="2.5"
-      strokeLinecap="round"
-    />
-    <circle cx="5" cy="16" r="4" fill="#475569" stroke="#1e293b" strokeWidth="1" />
-    <circle cx="65" cy="16" r="4" fill="#475569" stroke="#1e293b" strokeWidth="1" />
-  </svg>
-)

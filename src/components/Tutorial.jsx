@@ -486,7 +486,7 @@ function InvestStage({ current, folderOpened, folderPinned, folderTag, verdict, 
             )}
           </div>
 
-          <div className="flex-1 flex items-end gap-4 px-5 pb-3">
+          <div className="flex-1 flex items-end justify-center gap-4 px-5 pb-3">
             {!folderPinned ? (
               folderOpened ? (
                 <DraggableOpenedFolder

@@ -126,7 +126,8 @@ function FeedCard({
             )}
             {/* Vignette & Smooth Scrims */}
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_30%,rgba(0,0,0,0.6)_100%)] pointer-events-none" />
-            <div className="absolute inset-x-0 bottom-0 h-[65%] bg-gradient-to-t from-[#030407] via-[#030407]/70 to-transparent pointer-events-none" />
+            {/* Bottom scrim — opaque under the headline, fades up so the video stays visible */}
+            <div className="absolute inset-x-0 bottom-0 h-[70%] bg-gradient-to-t from-[#030407] from-15% via-[#030407]/85 via-45% to-transparent pointer-events-none" />
             <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-[#030407]/60 to-transparent pointer-events-none" />
           </div>
 
@@ -150,11 +151,14 @@ function FeedCard({
           </div>
 
           {/* Headline + engagement bottom-left */}
-          <div className="absolute inset-x-0 bottom-0 z-20 px-4 pb-[max(env(safe-area-inset-bottom),24px)] sm:pb-6">
+          <div className="absolute inset-x-0 bottom-0 z-30 px-4 pb-[max(env(safe-area-inset-bottom),24px)] sm:pb-6">
             <div className="pr-16 sm:pr-4">
               <h2
-                className="font-display text-[20px] sm:text-[22px] font-bold leading-[1.1] text-white drop-shadow-lg"
-                style={{ textWrap: 'balance' }}
+                className="font-display text-[20px] sm:text-[22px] font-bold leading-[1.1] text-white"
+                style={{
+                  textWrap: 'balance',
+                  textShadow: '0 2px 6px rgba(0,0,0,0.95), 0 0 18px rgba(0,0,0,0.6)',
+                }}
               >
                 {headline.headline}
               </h2>

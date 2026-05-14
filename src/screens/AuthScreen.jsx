@@ -51,29 +51,29 @@ export default function AuthScreen({ onContinueAsGuest, onAuthed }) {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.1)_0%,rgba(0,0,0,0.7)_85%)] pointer-events-none" />
       </div>
 
-      <div className="relative z-10 w-full px-6 flex flex-col items-center">
-        <div className="w-full max-w-3xl flex flex-col items-center text-center">
-          <div className="font-chaos text-[clamp(44px,8vw,72px)] leading-[0.95] tracking-tight text-[#fef3c7] drop-shadow-[0_4px_0_#5a3a1a,0_10px_30px_rgba(0,0,0,0.6)] whitespace-nowrap">
-            TRUTH<span className="text-[#c82424]">SCROLL</span>
+      <div className="relative z-10 mx-auto w-full max-w-md px-6 flex flex-col items-center">
+        <div className="w-full text-center">
+          <div className="font-chaos text-[clamp(44px,9vw,80px)] leading-none tracking-tight text-white drop-shadow-[0_8px_30px_rgba(0,0,0,0.6)]">
+            TRUTH<span className="text-feed-accent">SCROLL</span>
           </div>
-          <div className="mt-3 font-serif italic text-[#fef3c7]/90 text-base max-w-md drop-shadow-[0_2px_4px_rgba(0,0,0,0.55)]">
+          <div className="mt-3 font-serif italic text-white/85 text-base">
             {mode === 'login' ? 'Sign in to continue your investigation.' : 'Create an account to save your progress.'}
           </div>
         </div>
 
-        <div className="mt-7 w-full max-w-md rounded-2xl bg-black/60 backdrop-blur-md ring-1 ring-white/15 p-6 shadow-2xl">
+        <div className="mt-7 w-full rounded-2xl bg-black/60 backdrop-blur-md ring-1 ring-white/15 p-6 shadow-2xl">
           <div className="flex rounded-full bg-black/40 p-1 mb-5 text-sm font-mono uppercase tracking-widest">
             <button
               type="button"
               onClick={() => setMode('login')}
-              className={`flex-1 rounded-full py-2.5 transition ${mode === 'login' ? 'bg-[#f4a723] text-[#2d1d0c] font-bold' : 'text-[#fef3c7]/70'}`}
+              className={`flex-1 rounded-full py-2.5 transition ${mode === 'login' ? 'bg-feed-lime text-black' : 'text-white/70'}`}
             >
               Log in
             </button>
             <button
               type="button"
               onClick={() => setMode('signup')}
-              className={`flex-1 rounded-full py-2.5 transition ${mode === 'signup' ? 'bg-[#f4a723] text-[#2d1d0c] font-bold' : 'text-[#fef3c7]/70'}`}
+              className={`flex-1 rounded-full py-2.5 transition ${mode === 'signup' ? 'bg-feed-lime text-black' : 'text-white/70'}`}
             >
               Sign up
             </button>
@@ -87,7 +87,7 @@ export default function AuthScreen({ onContinueAsGuest, onAuthed }) {
                 autoComplete="username"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
-                className="w-full rounded-lg bg-white/10 ring-1 ring-white/15 px-4 py-3 text-base text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-[#f4a723]"
+                className="w-full rounded-lg bg-white/10 ring-1 ring-white/15 px-4 py-3 text-base text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-feed-lime"
                 placeholder="detective_42"
                 required
                 maxLength={20}
@@ -100,7 +100,7 @@ export default function AuthScreen({ onContinueAsGuest, onAuthed }) {
                 autoComplete={mode === 'login' ? 'current-password' : 'new-password'}
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full rounded-lg bg-white/10 ring-1 ring-white/15 px-4 py-3 text-base text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-[#f4a723]"
+                className="w-full rounded-lg bg-white/10 ring-1 ring-white/15 px-4 py-3 text-base text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-feed-lime"
                 placeholder="At least 6 characters"
                 required
                 minLength={6}
@@ -115,7 +115,7 @@ export default function AuthScreen({ onContinueAsGuest, onAuthed }) {
                   autoComplete="new-password"
                   value={confirm}
                   onChange={(e) => setConfirm(e.target.value)}
-                  className="w-full rounded-lg bg-white/10 ring-1 ring-white/15 px-4 py-3 text-base text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-[#f4a723]"
+                  className="w-full rounded-lg bg-white/10 ring-1 ring-white/15 px-4 py-3 text-base text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-feed-lime"
                   placeholder="Repeat your password"
                   required
                   minLength={6}
@@ -138,7 +138,7 @@ export default function AuthScreen({ onContinueAsGuest, onAuthed }) {
             <button
               type="submit"
               disabled={busy}
-              className="press w-full rounded-full bg-[#f4a723] border-[3px] border-[#8a5326] px-6 py-3.5 font-display text-base font-extrabold uppercase tracking-widest text-[#2d1d0c] shadow-[0_6px_0_#8a5326,0_14px_28px_-6px_rgba(82,42,16,0.55)] hover:scale-[1.02] active:scale-95 transition-transform disabled:opacity-50"
+              className="press w-full rounded-full bg-feed-lime px-6 py-3.5 font-display text-base font-bold uppercase tracking-widest text-black shadow-[0_0_24px_rgba(204,255,0,0.45)] disabled:opacity-50"
             >
               {busy ? 'Working…' : mode === 'login' ? 'Log in →' : 'Create account →'}
             </button>

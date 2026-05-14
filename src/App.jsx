@@ -35,7 +35,7 @@ const shuffle = (arr) => {
   return a
 }
 
-export default function App({ onExitToLauncher }) {
+export default function App() {
   const { user, remoteProgress, loading: authLoading, logout, syncProgress } = useAuth()
 
   // Guest mode is session-only and never persisted: every fresh tab load
@@ -222,30 +222,6 @@ export default function App({ onExitToLauncher }) {
     return () => document.removeEventListener('touchmove', prevent)
   }, [])
 
-  // Preload heavy art the moment TruthScroll mounts so production (Railway)
-  // doesn't pop assets in as the user advances screens. The Tutorial in
-  // particular swaps tiger poses every step and that flicker is visible
-  // on a cold cache.
-  useEffect(() => {
-    const urls = [
-      '/desk.png',
-      '/start.png',
-      '/tigers/tiger-happy.png',
-      '/tigers/tiger-talk.png',
-      '/tigers/tiger-point.png',
-      '/tigers/tiger-magnify.png',
-      '/tigers/tiger-scared.png',
-      '/tigers/tiger-run.png',
-    ]
-    const cache = []
-    for (const url of urls) {
-      const img = new Image()
-      img.src = url
-      cache.push(img)
-    }
-    return () => { cache.length = 0 }
-  }, [])
-
   // Persistent background music. Browsers block autoplay until the user
   // interacts with the page, so kick playback off on the first gesture.
   useEffect(() => {
@@ -285,13 +261,10 @@ export default function App({ onExitToLauncher }) {
   // Gate: must be signed in OR in guest mode
   if (!user && !guestMode) {
     return (
-      <>
-        <AuthScreen
-          onContinueAsGuest={() => setGuestMode(true)}
-          onAuthed={() => setScreen('start')}
-        />
-        <SwitchGameButton onClick={onExitToLauncher} />
-      </>
+      <AuthScreen
+        onContinueAsGuest={() => setGuestMode(true)}
+        onAuthed={() => setScreen('start')}
+      />
     )
   }
 
@@ -304,7 +277,6 @@ export default function App({ onExitToLauncher }) {
 
   return (
     <div className="relative h-[100dvh] w-full overflow-hidden bg-feed-bg text-white">
-      {(screen === 'start' || screen === 'feed') && <SwitchGameButton onClick={onExitToLauncher} />}
       {screen === 'start' && (
         <div className="absolute inset-0">
           <StartScreen
@@ -374,28 +346,5 @@ export default function App({ onExitToLauncher }) {
       )}
 
     </div>
-  )
-}
-
-/* Pill that drops the player back at the launcher chooser. Only rendered
-   on the surfaces where it won't intrude — StartScreen and the AuthScreen
-   gate. Styled big + lime to match TruthScroll's primary CTA. */
-function SwitchGameButton({ onClick }) {
-  if (!onClick) return null
-  return (
-    <button
-      type="button"
-      onClick={onClick}
-      aria-label="Switch game"
-      title="Switch game"
-      className="press fixed z-[200] flex items-center gap-2.5 rounded-full border-[3px] border-[#8a5326] bg-[#f4a723] px-5 sm:px-6 py-3 sm:py-3.5 font-display text-[14px] sm:text-[15px] font-extrabold uppercase tracking-[0.18em] text-[#2d1d0c] shadow-[0_6px_0_#8a5326,0_14px_28px_-6px_rgba(82,42,16,0.55)] hover:scale-[1.04] hover:bg-amber-400 active:scale-95 transition-transform"
-      style={{
-        left: 'max(env(safe-area-inset-left), 16px)',
-        bottom: 'max(env(safe-area-inset-bottom), 16px)',
-      }}
-    >
-      <span aria-hidden className="text-[18px] leading-none">←</span>
-      <span>Switch Game</span>
-    </button>
   )
 }

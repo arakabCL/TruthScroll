@@ -4,5 +4,7 @@ dist/
 .claude/
 Video/
 *.local
-data/
+# SQLite DB lives only at the repo root; do NOT use bare `data/` because
+# it would also ignore src/games/cluepaw/data/cases.js and Railway breaks.
+/data/
 .env

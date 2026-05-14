@@ -197,8 +197,8 @@ function FeedCard({
             whileTap={{ scale: 0.92 }}
             className="press group relative flex flex-col items-center"
           >
-            <span className="absolute -inset-2.5 rounded-full bg-feed-accent/30 blur-xl transition duration-500 group-hover:bg-feed-accent/60 group-hover:blur-2xl animate-pulseSoft" />
-            <div className="relative flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-feed-accent to-rose-600 text-white shadow-glow ring-2 ring-white/80 overflow-hidden transition-transform duration-300">
+            <span className="absolute -inset-2.5 rounded-full bg-[#f4a723]/35 blur-xl transition duration-500 group-hover:bg-[#f4a723]/65 group-hover:blur-2xl animate-pulseSoft" />
+            <div className="relative flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-[#fde0a8] via-[#f4a723] to-[#b5672b] text-[#2d1d0c] shadow-[0_8px_18px_rgba(82,42,16,0.5),0_0_20px_rgba(244,167,35,0.5)] ring-[3px] ring-[#8a5326] overflow-hidden transition-transform duration-300">
               <Magnifier className="h-6 w-6 drop-shadow-sm" />
             </div>
             <span className="mt-1.5 text-[10px] font-bold uppercase tracking-widest text-white sm:text-white/80 drop-shadow">

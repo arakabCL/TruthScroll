@@ -102,10 +102,10 @@ export default function FeedScreen({
         {/* LEFT column — TRUTHSCROLL title with the Detective ID badge tucked underneath */}
         <div className="pointer-events-auto flex flex-col items-start gap-3">
           <div>
-            <div className="font-chaos text-[28px] sm:text-[40px] lg:text-[48px] leading-none tracking-tight text-white drop-shadow-[0_6px_18px_rgba(0,0,0,0.6)]">
-              TRUTH<span className="text-feed-accent">SCROLL</span>
+            <div className="font-chaos text-[28px] sm:text-[40px] lg:text-[48px] leading-none tracking-tight text-[#fef3c7] drop-shadow-[0_4px_0_#5a3a1a,0_8px_18px_rgba(0,0,0,0.55)]">
+              TRUTH<span className="text-[#c82424]">SCROLL</span>
             </div>
-            <div className="mt-1 hidden sm:block text-[10px] font-mono uppercase tracking-[0.3em] text-white/70 drop-shadow">
+            <div className="mt-1 hidden sm:block text-[10px] font-mono uppercase tracking-[0.3em] text-[#fef3c7]/85 drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]">
               Scroll Bureau · Field Investigation
             </div>
           </div>
@@ -129,7 +129,7 @@ export default function FeedScreen({
           onClick={onShowHelp}
           aria-label="How to play"
           title="How to play"
-          className="press absolute z-50 right-3 sm:right-7 flex items-center justify-center rounded-full bg-feed-lime border-[3px] border-white/50 font-chaos leading-none text-black shadow-[0_12px_32px_-6px_rgba(0,0,0,0.6),0_0_30px_rgba(204,255,0,0.45)] hover:scale-[1.06] active:scale-95 transition-transform h-16 w-16 sm:h-20 sm:w-20 text-[34px] sm:text-[40px]"
+          className="press absolute z-50 right-3 sm:right-7 flex items-center justify-center rounded-full bg-[#f4a723] border-[3px] border-[#8a5326] font-chaos leading-none text-[#2d1d0c] shadow-[0_6px_0_#8a5326,0_14px_28px_-6px_rgba(82,42,16,0.55)] hover:scale-[1.06] active:scale-95 transition-transform h-16 w-16 sm:h-20 sm:w-20 text-[34px] sm:text-[40px]"
           style={{ bottom: 'max(env(safe-area-inset-bottom), 12px)' }}
         >
           ?
@@ -306,7 +306,7 @@ export function LeaderboardButton({ onClick }) {
       onClick={onClick}
       title="Leaderboard"
       aria-label="Leaderboard"
-      className="press flex items-center gap-2 rounded-full bg-gradient-to-br from-amber-300 via-amber-400 to-amber-600 border-[3px] border-[#8a5326] px-4 sm:px-5 lg:px-6 py-2.5 sm:py-3 font-chaos text-[14px] sm:text-[16px] lg:text-[18px] tracking-widest text-[#1c1b18] shadow-[0_10px_24px_-6px_rgba(0,0,0,0.55)] hover:scale-[1.04] active:scale-95 transition-transform"
+      className="press flex items-center gap-2 rounded-full bg-[#f4a723] border-[3px] border-[#8a5326] px-4 sm:px-5 lg:px-6 py-2.5 sm:py-3 font-chaos text-[14px] sm:text-[16px] lg:text-[18px] tracking-widest text-[#2d1d0c] shadow-[0_5px_0_#8a5326,0_12px_24px_-6px_rgba(82,42,16,0.55)] hover:scale-[1.04] active:scale-95 transition-transform"
     >
       <span aria-hidden className="text-[18px] sm:text-[22px] leading-none drop-shadow-sm">🏆</span>
       <span className="uppercase">Leaderboard</span>
@@ -321,9 +321,9 @@ export function ProfileButton({ username, onLogout }) {
       onClick={onLogout}
       title={`@${username} · click to log out`}
       aria-label={`Logged in as @${username}. Click to log out.`}
-      className="press relative flex h-12 w-12 sm:h-14 sm:w-14 lg:h-16 lg:w-16 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-feed-lime via-amber-300 to-feed-accent ring-[3px] ring-white/70 shadow-[0_10px_24px_-6px_rgba(0,0,0,0.6)] hover:scale-[1.05] active:scale-95 transition-transform"
+      className="press relative flex h-12 w-12 sm:h-14 sm:w-14 lg:h-16 lg:w-16 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#fde0a8] via-[#f4a723] to-[#b5672b] ring-[3px] ring-[#8a5326] shadow-[0_10px_24px_-6px_rgba(82,42,16,0.55)] hover:scale-[1.05] active:scale-95 transition-transform"
     >
-      <span className="font-chaos text-[22px] sm:text-[26px] lg:text-[30px] text-black/85 leading-none drop-shadow-sm">
+      <span className="font-chaos text-[22px] sm:text-[26px] lg:text-[30px] text-[#2d1d0c] leading-none drop-shadow-sm">
         {initial}
       </span>
     </button>
@@ -335,7 +335,7 @@ export function SignInButton({ onClick }) {
     <button
       onClick={onClick}
       title="Sign in to save progress"
-      className="press flex items-center gap-1.5 rounded-full bg-feed-lime border-[3px] border-white/40 px-4 sm:px-5 py-2.5 sm:py-3 font-chaos text-[14px] sm:text-[16px] tracking-widest text-black shadow-[0_8px_24px_-6px_rgba(0,0,0,0.55)] hover:scale-[1.04] active:scale-95 transition-transform"
+      className="press flex items-center gap-1.5 rounded-full bg-[#f4a723] border-[3px] border-[#8a5326] px-4 sm:px-5 py-2.5 sm:py-3 font-chaos text-[14px] sm:text-[16px] tracking-widest text-[#2d1d0c] shadow-[0_5px_0_#8a5326,0_10px_22px_-6px_rgba(82,42,16,0.55)] hover:scale-[1.04] active:scale-95 transition-transform"
     >
       <span className="uppercase">Sign in</span>
     </button>

@@ -64,7 +64,7 @@ const STEPS = [
   // FEED phase
   { phase: 'feed',    tiger: 'happy',   text: "Hi there! I'm Detective Stripes 🐯. Welcome to TruthScroll!", action: 'next' },
   { phase: 'feed',    tiger: 'talk',    text: "Your job is to spot fake news. Real story? Total lie? You decide.", action: 'next' },
-  { phase: 'feed',    tiger: 'point',   text: "See this pink magnifying glass? Tap INVESTIGATE to open a case.", action: 'investigate', highlight: 'investigate' },
+  { phase: 'feed',    tiger: 'point',   text: "See this orange magnifying glass? Tap INVESTIGATE to open a case.", action: 'investigate', highlight: 'investigate' },
 
   // INVESTIGATION phase
   { phase: 'invest',  tiger: 'talk',    text: "Welcome to your detective board. Down here are EVIDENCE folders.", action: 'next', highlight: 'folders' },
@@ -334,7 +334,7 @@ function FeedStage({ current, totalXP, rank, onInvestigate }) {
                 initial={{ scale: 0.6, opacity: 0 }}
                 animate={{ scale: [1, 1.15, 1], opacity: 1 }}
                 transition={{ duration: 1.4, repeat: Infinity, ease: 'easeInOut' }}
-                className="absolute right-[12px] bottom-[239px] block h-14 w-14 rounded-full ring-4 ring-feed-lime shadow-[0_0_40px_rgba(204,255,0,0.7)]"
+                className="absolute right-[12px] bottom-[239px] block h-14 w-14 rounded-full ring-4 ring-[#f4a723] shadow-[0_0_40px_rgba(244,167,35,0.7)]"
               />
             </div>
           </div>

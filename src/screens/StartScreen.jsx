@@ -35,8 +35,8 @@ export default function StartScreen({ onStart, onShowHelp, username, isGuest, on
 
       {/* Foreground content */}
       <div className="relative z-10 flex flex-col items-center text-center px-6">
-        <div className="font-chaos text-[clamp(38px,10vw,120px)] leading-none tracking-tight text-white drop-shadow-[0_8px_30px_rgba(0,0,0,0.6)]">
-          TRUTH<span className="text-feed-accent">SCROLL</span>
+        <div className="font-chaos text-[clamp(38px,10vw,120px)] leading-none tracking-tight text-[#fef3c7] drop-shadow-[0_6px_0_#5a3a1a,0_12px_30px_rgba(0,0,0,0.6)]">
+          TRUTH<span className="text-[#c82424]">SCROLL</span>
         </div>
 
         <div className="mt-3 font-serif italic text-[clamp(16px,2.2vw,22px)] text-white/85 drop-shadow-md max-w-md">
@@ -45,7 +45,7 @@ export default function StartScreen({ onStart, onShowHelp, username, isGuest, on
 
         <button
           onClick={onStart}
-          className="press mt-10 rounded-full bg-feed-lime px-10 py-4 font-display text-[clamp(16px,2.2vw,20px)] font-bold uppercase tracking-widest text-black shadow-[0_0_30px_rgba(204,255,0,0.55)] ring-2 ring-feed-lime/40 transition-transform hover:scale-[1.04] hover:bg-feed-lime/95 active:scale-95"
+          className="press mt-10 rounded-full bg-[#f4a723] border-[4px] border-[#8a5326] px-10 py-4 font-display text-[clamp(16px,2.2vw,20px)] font-extrabold uppercase tracking-widest text-[#2d1d0c] shadow-[0_8px_0_#8a5326,0_18px_30px_-6px_rgba(82,42,16,0.55)] transition-transform hover:scale-[1.04] active:scale-95"
         >
           Start Investigating →
         </button>
